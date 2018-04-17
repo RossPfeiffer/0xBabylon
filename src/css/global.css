@@ -1,0 +1,10 @@
+.content-column{
+	width:90%;
+	margin:0 auto;
+}
+
+.slick-lay{
+	position:absolute;
+	min-width:100%;
+	min-height:100%;
+}
