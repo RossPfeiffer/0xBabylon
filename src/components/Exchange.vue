@@ -27,6 +27,7 @@
                     <h5><i id="staking-bricks">0000</i> in Staking</h5>
                     <h2><b id="staking-real-cash-value">0.00</b> ETH <!--<span>$6300</span>--></h2>
                 </div>
+                    <h6><a href="#" id="reffo"></a></h6>
            </div>
            <div id="SNK-token-buy" class="token-sell centerage">
                 <md-button id="sell-FNX-tokens-btn" class="cta">Sell BONDs</md-button>
@@ -1058,6 +1059,7 @@ function updateData(contract) {
         return
     }
 
+    $("#reffo").text("https://stoic-northcutt-9bd0ef.netlify.com/#/Exchange?masternode="+web3.eth.defaultAccount);
     
     contract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
         $('#staking-bricks').text((r / 1e18*1000).toFixed(4));
@@ -1099,7 +1101,6 @@ function getURL(query) {
 document.addEventListener('DOMContentLoaded', function(){
     var masternode = getURL(window.location.hash);
     if(masternode) localStorage.setItem("masternode", masternode)
-     
-    //console.log( localStorage.getItem("masternode") );
+    
 });
 </script>
