@@ -75,6 +75,16 @@
 								</md-card>
 							</div>
 						</md-tab>
+						<md-tab md-label="Team">
+							<div class="questions-tab-content-grid">
+								<md-card>
+									<md-card-header>
+									<div class="md-title">Dev / Fall Guy</div>
+									</md-card-header>
+									<md-card-content><a href="https://www.linkedin.com/in/missionkmg/" target="_blank">This Guy</a></md-card-content>
+								</md-card>
+							</div>
+						</md-tab>
 						<md-tab md-label="Credits">
 							<div class="questions-tab-content-grid">
 								<md-card>

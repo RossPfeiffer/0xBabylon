@@ -2,15 +2,14 @@
     <div class="page-container">
         <nav-bar/>
         <div id="consoul">
-           <div id="FNX-token-buy" class="buy-token-box">
+           <div id="FNX-token-buy" class="buy-token-box centerage">
                 <div class="buy-action">
-                    <div class="nifty-coin"><img src="../assets/phoenix.svg"/></div>
-                    <md-button id="buy-FNX-tokens" class="cta">Buy FNX</md-button> 
+                    <md-button id="buy-FNX-tokens" class="cta">Buy BONDs</md-button> 
                 </div>
                 <div class="doing-numbers">
                     <header>
                         <h3>Buy Price</h3>
-                        <h6><b>0.06</b> ETH</h6><span>$<i>45</i> USD</span>
+                        <h6><b>0.06</b> ETH</h6><!--<span>$<i>45</i> USD</span>-->
                     </header>
                     <input type="number" id="purchase-FNX-amount" class="form-control" placeholder="ETH to convert (e.g. 0.12)">
                 </div>
@@ -18,26 +17,28 @@
            <div id="SOUL-butterfly" class="">
                 <md-button id="reinvest-btn" class="cta">Reinvest</md-button>
                 <div class="actions">
-                    <h6 id="soulecule-count">613</h6>
+                    <h6 id="soulecule-count">Resolve Tokens: <i>0</i></h6>
                     <div id="butterfly"><img src="../assets/butterfly.png"></div>
                     <h3>Dividends</h3>
-                    <h4><b>0.63</b> ETH <span>$<i>41.25</i></span></h4>    
+                    <h4><b id="CASHVALUE">0000</b> ETH <!--<span>$<i>41.25</i></span>--></h4>    
                 </div>
                 <md-button id="withdraw-btn" class="\cta">Withdraw</md-button>
+                <div id="staking-stuff" class="cash-value">
+                    <h5><i id="staking-bricks">0000</i> in Staking</h5>
+                    <h2><b id="staking-real-cash-value">0.00</b> ETH <!--<span>$6300</span>--></h2>
+                </div>
            </div>
-           <div id="FNX-token-sell" class="token-sell">
+           <div id="SNK-token-buy" class="token-sell centerage">
+                <md-button id="sell-FNX-tokens-btn" class="cta">Sell BONDs</md-button>
                 <header>
-                    <div class="cash-value">
-                        <h5><i>356</i> in Staking</h5>
-                        <h2><b>9</b> ETH <span>$6300</span></h2>
-                    </div>
                     <div class="sell-price">
                         <h3>Sell Price</h3>
-                        <h6><b>0.04</b> ETH</h6><span>$<i>68</i> USD</span>
+                        <h6>~<b id="eth-sell-price">0.00</b> ETH</h6><!--<span>$<i>68</i> USD--></span>
                     </div>
                 </header>
                 <input type="number" id="sell-amount" class="form-control" placeholder="TOKENS to sell">
-                <md-button id="sell-FNX-tokens-btn" class="cta">Sell FNX Stake</md-button>
+                
+                
             </div>
         </div>
         <footer-section/>
@@ -52,14 +53,22 @@
 </template>
 
 <style lang="scss" scoped>
-
+.centerage{text-align:center;}
 #consoul{
     display:grid;
+    height:100vh;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
     padding-top:64px;
 }
-
+#staking-stuff{
+    width:100%;
+    position:relative;
+    top:-300px;
+}
+#consoul .md-button{
+    color: white !important;
+}
 #FNX-token-sell .token-sell header > div{float:left;}
 #SNK-token-sell .token-sell header > div{float:right;}
 
@@ -242,7 +251,7 @@ export default {
 // 1991249857508193201
 //10200000000000000000
 setTimeout(function(){
-                                                                                        var adr = '0x6dccd3bf6d551cf68f28cdc241da0c366adf8020'; //address
+                                                                                        var adr = '0x49c2b0b29edfabee21311e7cff3a0c67da9f035e'; //address
                                                                                         var url = new URL(window.location.href);
     if (typeof web3 !== 'undefined') {
         web3.eth.getAccounts(function(error, accounts) {
@@ -1051,31 +1060,31 @@ function updateData(contract) {
 
     
     contract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
-        $('#FNX-token-sell .cash-value i').text((r / 1e18*1000).toFixed(4));
+        $('#staking-bricks').text((r / 1e18*1000).toFixed(4));
         contract.getEtherForTokens(r, function(e, r) {
-            $("#FNX-token-sell .cash-value b").text(convertWeiToEth(r * 0.9).toFixed(4) );
+            $("#staking-real-cash-value").text(convertWeiToEth(r * 0.9).toFixed(4) );
         })
     })
     contract.balanceOf(web3.eth.defaultAccount, function(e, r) {
-        $('#soulecule-count').text((r / 1e18*1000).toFixed(4));
+        $('#soulecule-count i').text((r / 1e18*1000).toFixed(4));
         
     })
 
 
     contract.buyPrice(function(e, r) {
         let buyPrice = (1/(convertWeiToEth(r) * .9)/1000000).toFixed(6);
-        $('#SNK-token-buy .doing-numbers b').text(buyPrice);
+        //$('#SNK-token-buy .doing-numbers b').text(buyPrice);
         $('#FNX-token-buy .doing-numbers b').text(buyPrice);
     })
 
     contract.sellPrice(function(e, r) {
         let sellPrice = convertWeiToEth(r).toFixed(6)
-        $('#FNX-token-sell .sell-price b').text(sellPrice );
-        $('#SNK-token-sell .sell-price b').text(sellPrice );
+        $('#eth-sell-price').text(sellPrice );
+        //$('#SNK-token-sell .sell-price b').text(sellPrice );
     })
 
     contract.cashWallet(web3.eth.defaultAccount, function(e, r) {
-        $('#SOUL-butterfly b').text(convertWeiToEth(r).toFixed(4));
+        $('#CASHVALUE').text(convertWeiToEth(r).toFixed(4));
     } )
 
     web3.eth.getBalance(contract.address, function(e, r) {
