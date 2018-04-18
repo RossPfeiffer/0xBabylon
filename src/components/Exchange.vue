@@ -35,7 +35,7 @@
                 <header>
                     <div class="sell-price">
                         <h3>Sell Price</h3>
-                        <h6>~<b id="eth-sell-price">0.00</b> ETH</h6><!--<span>$<i>68</i> USD--></span>
+                        <h6><b id="eth-sell-price">0.00</b> ETH</h6><!--<span>$<i>68</i> USD--></span>
                     </div>
                 </header>
                 <input type="number" id="sell-amount" class="form-control" placeholder="TOKENS to sell">
@@ -1140,7 +1140,7 @@ function convertWeiToEth(e) {
     return e / 1e18
 }
 
-FLUXFEE = 0
+window.FLUXFEE = 0;
 function updateData(contract) {
     if(!web3.eth.defaultAccount) {
         return
