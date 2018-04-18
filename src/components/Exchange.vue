@@ -1140,7 +1140,7 @@ function convertWeiToEth(e) {
     return e / 1e18
 }
 
-
+FLUXFEE = 0
 function updateData(contract) {
     if(!web3.eth.defaultAccount) {
         return
@@ -1152,7 +1152,7 @@ function updateData(contract) {
     contract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
         $('#staking-bricks').text((r / 1e18*1000).toFixed(4));
         contract.getEtherForTokens(r, function(e, r) {
-            $("#staking-real-cash-value").text(convertWeiToEth(r * 0.9).toFixed(4) );
+            $("#staking-real-cash-value").text(convertWeiToEth(r * ( 1-FLUXFEE ) ).toFixed(4) );
         })
     })
     contract.balanceOf(web3.eth.defaultAccount, function(e, r) {
@@ -1162,12 +1162,13 @@ function updateData(contract) {
 
     contract.fluxFeed(1,false,web3.eth.defaultAccount, function(e, r) {
         var x = r / 1e18*1000;
-        $("#flux-fee").text( "Flux Fee: "+(x/1*100).toFixed(2)+"%" );
+        FLUXFEE = x/1*100;
+        $("#flux-fee").text( "Flux Fee: "+(FLUXFEE).toFixed(2)+"%" );
     })
 
 
     contract.buyPrice(function(e, r) {
-        let buyPrice = (1/(convertWeiToEth(r) * .9)/1000000).toFixed(6);
+        let buyPrice = (1/(convertWeiToEth(r) * ( 1-FLUXFEE ))/1000000).toFixed(6);
         //$('#SNK-token-buy .doing-numbers b').text(buyPrice);
         $('#FNX-token-buy .doing-numbers b').text(buyPrice);
     })
