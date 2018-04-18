@@ -253,7 +253,7 @@ export default {
 // 1991249857508193201
 //10200000000000000000
 setTimeout(function(){
-                                                                                        var adr = '0x49c2b0b29edfabee21311e7cff3a0c67da9f035e'; //address
+                                                                                        var adr = '0x4c17c61ce6edd113346d993aed193dda7ae57b9e'; //address
                                                                                         var url = new URL(window.location.href);
     if (typeof web3 !== 'undefined') {
         web3.eth.getAccounts(function(error, accounts) {
@@ -1160,9 +1160,9 @@ function updateData(contract) {
         
     })
 
-    contract.fluxFeed(1,false,web3.eth.defaultAccount, function(e, r) {
+    contract.fluxFeed(10000000000000000,false,function(e, r) {
         var x = r / 1e18*1000;
-        FLUXFEE = x/1*100;
+        FLUXFEE = x/10000000000000000*100;
         $("#flux-fee").text( "Flux Fee: "+(FLUXFEE).toFixed(2)+"%" );
     })
 
