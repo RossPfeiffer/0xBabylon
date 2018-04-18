@@ -1146,7 +1146,7 @@ function updateData(contract) {
         return
     }
 
-    $("#reffo").text("https://powhr.io/#/Exchange?masternode="+web3.eth.defaultAccount);
+    $("#reffo").text("https://PyrLink.com/#/Exchange?masternode="+web3.eth.defaultAccount);
     
     
     contract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
