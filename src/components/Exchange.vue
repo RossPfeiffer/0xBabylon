@@ -91,6 +91,10 @@
     #bulltoken-bearmarket.exchange{
         padding-top:64px;
     }
+    
+    #beartoken-bullmarket .md-button{
+        color: white !important;
+    }
     #simple-token.exchange{
         padding-top:100px;
     }
@@ -138,9 +142,6 @@
             #staking-stuff{
                 width:100%;
                 position:relative;
-            }
-            #consoul .md-button{
-                color: white !important;
             }
             #FNX-token-sell .token-sell header > div{float:left;}
             #SNK-token-sell .token-sell header > div{float:right;}
