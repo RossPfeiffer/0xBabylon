@@ -92,7 +92,7 @@
         padding-top:64px;
     }
 
-    #beartoken-bullmarket .cta.md-button{
+    #beartoken-bullmarket .md-button.md-theme-default,#beartoken-bullmarket .md-button{
         color: white !important;
     }
     #simple-token.exchange{
@@ -1447,8 +1447,9 @@ function updateData(contract) {
         //$('#FNX-token-buy .doing-numbers b').text(buyPrice);
     })
 
-    contract.sellPrice(function(e, r) {
-        let sellPrice = convertWeiToEth(r).toFixed(6)
+    contract.sellPrice(function(e, r){
+        //let sellPrice = convertWeiToEth(r).toFixed(6)
+        let sellPrice= (1/(convertWeiToEth(r) * ( 1 ))/1000000).toFixed(6);
         $('#twin-sell-price-box b').text(sellPrice);
         //$('#SNK-token-sell .sell-price b').text(sellPrice );
     })
