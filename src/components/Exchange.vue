@@ -1449,7 +1449,7 @@ function updateData(contract) {
 
     contract.sellPrice(function(e, r) {
         let sellPrice = convertWeiToEth(r).toFixed(6)
-        $('#twin-sell-price-box b').text(buyPrice);
+        $('#twin-sell-price-box b').text(sellPrice);
         //$('#SNK-token-sell .sell-price b').text(sellPrice );
     })
 
