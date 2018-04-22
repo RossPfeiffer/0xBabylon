@@ -38,7 +38,7 @@
                     <h6 id="soulecule-count">Resolve Ratio <i>0</i>%</h6>
                     <div class="butterflux"><img src="../assets/butterfly.png"></div>
                     <h4>Dividends: <b id="CASHVALUE">0000</b> ETH </h4>
-                    <md-button id="withdraw-btn" class="cta">Withdraw</md-button>
+                    <md-button id="withdraw-btn" class="cta" style="color:white;">Withdraw</md-button>
                 </div>
                 <md-button id="reinvest-BEAR" class="cta reinvest-btn">Reinvest BEAR</md-button>
             </div>
@@ -92,7 +92,9 @@
         padding-top:64px;
     }
 
-    #beartoken-bullmarket .md-button.md-theme-default,#beartoken-bullmarket .md-button{
+    #beartoken-bullmarket .md-button.md-theme-default,
+    #beartoken-bullmarket .md-button,
+    .exchange .md-button{
         color: white !important;
     }
     #simple-token.exchange{
