@@ -91,8 +91,8 @@
     #bulltoken-bearmarket.exchange{
         padding-top:64px;
     }
-    
-    #beartoken-bullmarket .md-button{
+
+    #beartoken-bullmarket .cta.md-button{
         color: white !important;
     }
     #simple-token.exchange{
