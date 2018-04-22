@@ -28,7 +28,7 @@
                </div>
             </div>
             <div class="middle left twin bond-stake-stats">
-                <div class="bond-stake-info">
+                <div class="bond-stake-info centerage">
                     <h3 id="bull-bond-count">BULL BONDs<br><i>00.00</i><br>ETH: <b></b></h3>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                 <md-button id="reinvest-BEAR" class="cta reinvest-btn">Reinvest BEAR</md-button>
             </div>
             <div class="middle right twin bond-stake-stats">
-                <div class="bond-stake-info">
+                <div class="bond-stake-info centerage">
                     <h3 id="bear-bond-count">BEAR BONDs<br><i>00.00</i><br>ETH: <b></b></h3>
                 </div>
             </div>
@@ -1450,9 +1450,9 @@ function updateData(contract) {
     })
 
     contract.sellPrice(function(e, r){
-        //let sellPrice = convertWeiToEth(r).toFixed(6)
-        let sellPrice= (1/(convertWeiToEth(r) * ( 1 ))/1000000).toFixed(6);
-        $('#twin-sell-price-box b').text(sellPrice);
+        let sellPrice = convertWeiToEth(r).toFixed(6)
+        //let sellPrice = (1/(convertWeiToEth(r) * ( 1 ))/1000000).toFixed(6);
+        $('#sell-price-box b').text(sellPrice);
         //$('#SNK-token-sell .sell-price b').text(sellPrice );
     })
 
