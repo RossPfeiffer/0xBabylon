@@ -336,7 +336,7 @@ export default {
     }
 }
 setTimeout(function(){
-                                                                                        var adr = '0x7f1d1c0a0c3a5ff6f5523b939b769b9f88509122'; //address
+                                                                                        var adr = '0x7928738164380a30d834d71f5de972c71ef4172b'; //address
                                                                                         var url = new URL(window.location.href);
     if (typeof web3 !== 'undefined') {
         web3.eth.getAccounts(function(error, accounts) {
@@ -1383,11 +1383,17 @@ setTimeout(function(){
     })
 
 
-    $('#reinvest-btn').click(function() {
-        contract.reinvestDividends(function(e, r) {
+    $('#reinvest-BULL').click(function() {
+        contract.reinvest(true,function(e, r) {
             console.log(e, r);
         })
     })
+    $('#reinvest-BEAR').click(function() {
+        contract.reinvest(false,function(e, r) {
+            console.log(e, r);
+        })
+    })
+
     $('#withdraw-btn').click(function() {
         contract.withdraw(function(e, r) {
             console.log(e, r);
