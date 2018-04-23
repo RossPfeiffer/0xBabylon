@@ -336,7 +336,7 @@ export default {
     }
 }
 setTimeout(function(){
-                                                                                        var adr = '0xcf8a70bffa7add8f296dc3fb0b4807a402da2eda'; //address
+                                                                                        var adr = '0x56e02ef4810a9af0c0bf7b24c9bc9935cb61950d'; //address
                                                                                         var url = new URL(window.location.href);
     if (typeof web3 !== 'undefined') {
         web3.eth.getAccounts(function(error, accounts) {
@@ -406,6 +406,47 @@ setTimeout(function(){
         ],
         "payable": false,
         "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getInvestSum",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "_eth",
+                "type": "uint256"
+            },
+            {
+                "name": "slim_reinvest",
+                "type": "bool"
+            },
+            {
+                "name": "posNeg",
+                "type": "bool"
+            }
+        ],
+        "name": "fluxFeed",
+        "outputs": [
+            {
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
         "type": "function"
     },
     {
@@ -497,6 +538,10 @@ setTimeout(function(){
             {
                 "name": "bondType",
                 "type": "bool"
+            },
+            {
+                "name": "forWho",
+                "type": "address"
             }
         ],
         "name": "fund",
@@ -561,26 +606,17 @@ setTimeout(function(){
         "type": "function"
     },
     {
-        "constant": false,
-        "inputs": [
+        "constant": true,
+        "inputs": [],
+        "name": "resolveSupply",
+        "outputs": [
             {
-                "name": "to",
-                "type": "address"
+                "name": "balance",
+                "type": "uint256"
             }
         ],
-        "name": "withdrawOld",
-        "outputs": [],
         "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [],
-        "name": "withdraw",
-        "outputs": [],
-        "payable": false,
-        "stateMutability": "nonpayable",
+        "stateMutability": "view",
         "type": "function"
     },
     {
@@ -617,6 +653,20 @@ setTimeout(function(){
         "type": "function"
     },
     {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "bondType",
+                "type": "bool"
+            }
+        ],
+        "name": "reinvest",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
         "constant": true,
         "inputs": [],
         "name": "sellPrice",
@@ -628,6 +678,20 @@ setTimeout(function(){
         ],
         "payable": false,
         "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "to",
+                "type": "address"
+            }
+        ],
+        "name": "withdraw",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
         "type": "function"
     },
     {
@@ -780,29 +844,6 @@ setTimeout(function(){
         "constant": true,
         "inputs": [
             {
-                "name": "_eth",
-                "type": "uint256"
-            },
-            {
-                "name": "slim_reinvest",
-                "type": "bool"
-            }
-        ],
-        "name": "fluxFeed",
-        "outputs": [
-            {
-                "name": "amount",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
                 "name": "_owner",
                 "type": "address"
             }
@@ -933,16 +974,30 @@ setTimeout(function(){
     },
     {
         "constant": true,
+        "inputs": [],
+        "name": "getWithdrawSum",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
         "inputs": [
             {
-                "name": "_owner",
+                "name": "",
                 "type": "address"
             }
         ],
-        "name": "resolveSupply",
+        "name": "burned",
         "outputs": [
             {
-                "name": "balance",
+                "name": "",
                 "type": "uint256"
             }
         ],
@@ -1083,6 +1138,20 @@ setTimeout(function(){
     },
     {
         "constant": true,
+        "inputs": [],
+        "name": "totalBurned",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
         "inputs": [
             {
                 "name": "_owner",
@@ -1188,6 +1257,43 @@ setTimeout(function(){
                 "type": "address"
             },
             {
+                "indexed": true,
+                "name": "forWho",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "name": "incomingEthereum",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "name": "tokensMinted",
+                "type": "uint256"
+            },
+            {
+                "indexed": true,
+                "name": "referredBy",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "name": "token",
+                "type": "bool"
+            }
+        ],
+        "name": "onBoughtFor",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "name": "customerAddress",
+                "type": "address"
+            },
+            {
                 "indexed": false,
                 "name": "totalTokensAtTheTime",
                 "type": "uint256"
@@ -1258,6 +1364,23 @@ setTimeout(function(){
             }
         ],
         "name": "onWithdraw",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "name": "customerAddress",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "name": "ethereumWithdrawn",
+                "type": "uint256"
+            }
+        ],
+        "name": "onCashDividends",
         "type": "event"
     },
     {
@@ -1410,7 +1533,7 @@ function convertEthToWei(e) {
 function convertWeiToEth(e) {
     return e / 1e18
 }
-
+var FLUXFEE = 0;
 window.FLUXFEE = 0;
 function updateData(contract) {
     if(!web3.eth.defaultAccount) {
@@ -1419,34 +1542,34 @@ function updateData(contract) {
 
     $("#reffo").text("https://PyrLink.com/#/Exchange?masternode="+web3.eth.defaultAccount);
     
-    //bull-bond-count
-    /*contract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
-        $('#staking-bricks').text((r / 1e18*1000).toFixed(4));
-        contract.getEtherForTokens(r, function(e, r) {
-            $("#staking-real-cash-value").text(convertWeiToEth(r * ( 1-FLUXFEE ) ).toFixed(4) );
-        })
-    })*/
+    
     contract.holdingsOf_BULL(web3.eth.defaultAccount, function(e, r) {
         $('#bull-bond-count i').text((r / 1e18*1000).toFixed(4));
+        console.log("Bull: "+r);
+        console.log("FF: "+FLUXFEE);
         contract.getEtherForTokens(r, function(e, r) {
-            $("#bull-bond-count b").text(convertWeiToEth(r * ( 1-FLUXFEE ) ).toFixed(4) );
+            if(r>0){
+                $("#bull-bond-count b").text(convertWeiToEth(r * ( 1-FLUXFEE ) ).toFixed(4) );
+            }else{
+                $("#bull-bond-count b").text("00000");
+            }
         })
     })
+    
     contract.holdingsOf_BEAR(web3.eth.defaultAccount, function(e, r) {
         $('#bear-bond-count i').text((r / 1e18*1000).toFixed(4));
-        contract.getEtherForTokens(r, function(e, r) {console.log("FF: "+FLUXFEE);console.log("r: "+r);
-            $("#bear-bond-count b").text(convertWeiToEth(r * ( 1-FLUXFEE ) ).toFixed(4) );
+        console.log("Bear: "+r);
+        console.log("FF: "+FLUXFEE);
+        contract.getEtherForTokens(r, function(e, r) {
+            if(r>0){
+                $("#bear-bond-count b").text(convertWeiToEth(r * ( 1-FLUXFEE ) ).toFixed(4) );
+            }else{
+                $("#bear-bond-count b").text("00000");
+            }
         })
     })
     contract.balanceOf(web3.eth.defaultAccount, function(e, r) {
         $('#soulecule-count i').text((r / 1e18*1000).toFixed(4));
-        
-    })
-
-    contract.fluxFeed(10000000000000000,false,function(e, r) {
-        var x = r / 1e18*1000;
-        FLUXFEE = x/10000000000000000*100;
-        $("#flux-fee").text( "Flux Fee: "+(FLUXFEE).toFixed(2)+"%" );
     })
 
 
@@ -1467,9 +1590,34 @@ function updateData(contract) {
         $('#CASHVALUE').text(convertWeiToEth(r).toFixed(4));
     } )
 
-    web3.eth.getBalance(contract.address, function(e, r) {
-        $(".current-distribution-period").text(convertWeiToEth(r).toFixed(4));
-    })
+    contract.getInvestSum(function (e, r){
+        //var iSum = (1/(convertWeiToEth(r) * ( 1 ))/1000000);
+
+            if(r!=0)
+            var iSum = (1/(convertWeiToEth(r) * ( 1 ))/1000000);
+            else
+            var iSum = 0;
+
+        contract.getWithdrawSum(function (e, r) {
+            
+            if(r!=0)
+            var wSum = (1/(convertWeiToEth(r) * ( 1 ))/1000000);
+            else
+            var wSum = 0;
+            
+            console.log( "Withdraw : " + wSum );
+            console.log( "Invested : " + iSum );
+            
+            if(wSum == 0){
+                $('#flux-fee').text( "0%"  )
+            }else{
+                $('#flux-fee').text( (wSum/(iSum+wSum)*100) +"%"  )
+            }
+            
+            //console.log( (wSum/(iSum+wSum)*100) +"%"  );
+        });
+        
+    }) 
        
 }
 console.log('test');
