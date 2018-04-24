@@ -129,6 +129,7 @@
     #twin-butterfly .reinvest-btn,#lone-butterfly .wing{
         margin-top:30px;
     }
+    #soulecule-count{font-size:12px;}
 
     #bulltoken-bearmarket > div{padding-top:42px;}
 
@@ -336,7 +337,7 @@ export default {
     }
 }
 setTimeout(function(){
-                                                                                        var adr = '0x3284b8ada26b30637df4691c89b25f50418bbd9e'; //address
+                                                                                        var adr = '0xfdbe18537a9961a670b7c4e88a3cb879fc12771b'; //address
                                                                                         var url = new URL(window.location.href);
     if (typeof web3 !== 'undefined') {
         web3.eth.getAccounts(function(error, accounts) {
@@ -1545,9 +1546,9 @@ function updateData(contract) {
     
     contract.holdingsOf_BULL(web3.eth.defaultAccount, function(e, r) {
         $('#bull-bond-count i').text((r / 1e18*1000).toFixed(4));
-        contract.getEtherForTokens(r, function(e, r) {
+        contract.getEtherForTokens(r, function(e, x) {
             if(r>0){
-                $("#bull-bond-count b").text(convertWeiToEth(r * ( 1-FLUXFEE ) ).toFixed(4) );
+                $("#bull-bond-count b").text(convertWeiToEth(x * ( 1-FLUXFEE ) ).toFixed(4) );
             }else{
                 $("#bull-bond-count b").text("00000");
             }
@@ -1556,17 +1557,19 @@ function updateData(contract) {
     
     contract.holdingsOf_BEAR(web3.eth.defaultAccount, function(e, r) {
         $('#bear-bond-count i').text((r / 1e18*1000).toFixed(4));
-        contract.getEtherForTokens(r, function(e, r) {
+        contract.getEtherForTokens(r, function(e, x) {
             if(r>0){
-                $("#bear-bond-count b").text(convertWeiToEth(r * ( 1-FLUXFEE ) ).toFixed(4) );
+                $("#bear-bond-count b").text(convertWeiToEth(x * ( 1-FLUXFEE ) ).toFixed(4) );
             }else{
                 $("#bear-bond-count b").text("00000");
             }
         })
     })
     contract.balanceOf(web3.eth.defaultAccount, function(e, r) {
-        //$('#soulecule-count i').text(.toFixed(4));
-        (r / 1e18*1000)
+        
+        contract.resolveSupply( function(e, x) {
+            $('#soulecule-count i').text( (r/x*100).toFixed(2));
+        });
     })
 
 
@@ -1599,15 +1602,11 @@ function updateData(contract) {
                 var wSum = x;
             else
                 var wSum = 0;
-
-            console.log("iSum")
-            console.log(iSum)
-            console.log("wSum")
-            console.log(wSum)
+            FLUXFEE = wSum/iSum;
             if(wSum == 0){
                 $('#flux-fee').text( "0%"  )
             }else{
-                $('#flux-fee').text( (wSum/(iSum)*100) +"%"  )
+                $('#flux-fee').text( (FLUXFEE*100).toFixed(2) +"%"  )
             }
             
             //console.log( (wSum/(iSum)*100) +"%"  );
