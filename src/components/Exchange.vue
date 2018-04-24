@@ -336,7 +336,7 @@ export default {
     }
 }
 setTimeout(function(){
-                                                                                        var adr = '0x1a668abe5a48a30d69dc29c04ccfcfb4dcf209ca'; //address
+                                                                                        var adr = '0x3284b8ada26b30637df4691c89b25f50418bbd9e'; //address
                                                                                         var url = new URL(window.location.href);
     if (typeof web3 !== 'undefined') {
         web3.eth.getAccounts(function(error, accounts) {
@@ -1545,8 +1545,6 @@ function updateData(contract) {
     
     contract.holdingsOf_BULL(web3.eth.defaultAccount, function(e, r) {
         $('#bull-bond-count i').text((r / 1e18*1000).toFixed(4));
-        console.log("Bull: "+r);
-        console.log("FF: "+FLUXFEE);
         contract.getEtherForTokens(r, function(e, r) {
             if(r>0){
                 $("#bull-bond-count b").text(convertWeiToEth(r * ( 1-FLUXFEE ) ).toFixed(4) );
@@ -1567,7 +1565,8 @@ function updateData(contract) {
         })
     })
     contract.balanceOf(web3.eth.defaultAccount, function(e, r) {
-        $('#soulecule-count i').text((r / 1e18*1000).toFixed(4));
+        //$('#soulecule-count i').text(.toFixed(4));
+        (r / 1e18*1000)
     })
 
 
@@ -1589,20 +1588,22 @@ function updateData(contract) {
     } )
 
     contract.getInvestSum(function (e, r){
-        //var iSum = (1/(convertWeiToEth(r) * ( 1 ))/1000000);
-
             if(r!=0)
-            var iSum = (1/(convertWeiToEth(r) * ( 1 ))/1000000);
+            var iSum = r;
             else
             var iSum = 0;
 
-        contract.getWithdrawSum(function (e, r) {
+        contract.getWithdrawSum(function (e, x) {
             
-            if(r!=0)
-            var wSum = (1/(convertWeiToEth(r) * ( 1 ))/1000000);
+            if(x!=0)
+                var wSum = x;
             else
-            var wSum = 0;
-            
+                var wSum = 0;
+
+            console.log("iSum")
+            console.log(iSum)
+            console.log("wSum")
+            console.log(wSum)
             if(wSum == 0){
                 $('#flux-fee').text( "0%"  )
             }else{
