@@ -336,7 +336,7 @@ export default {
     }
 }
 setTimeout(function(){
-                                                                                        var adr = '0xb0399e11184e67cf517e596086bc14d9a894f9be'; //address
+                                                                                        var adr = '0x1a668abe5a48a30d69dc29c04ccfcfb4dcf209ca'; //address
                                                                                         var url = new URL(window.location.href);
     if (typeof web3 !== 'undefined') {
         web3.eth.getAccounts(function(error, accounts) {
@@ -1558,8 +1558,6 @@ function updateData(contract) {
     
     contract.holdingsOf_BEAR(web3.eth.defaultAccount, function(e, r) {
         $('#bear-bond-count i').text((r / 1e18*1000).toFixed(4));
-        console.log("Bear: "+r);
-        console.log("FF: "+FLUXFEE);
         contract.getEtherForTokens(r, function(e, r) {
             if(r>0){
                 $("#bear-bond-count b").text(convertWeiToEth(r * ( 1-FLUXFEE ) ).toFixed(4) );
@@ -1605,16 +1603,13 @@ function updateData(contract) {
             else
             var wSum = 0;
             
-            console.log( "Withdraw : " + wSum );
-            console.log( "Invested : " + iSum );
-            
             if(wSum == 0){
                 $('#flux-fee').text( "0%"  )
             }else{
-                $('#flux-fee').text( (wSum/(iSum+wSum)*100) +"%"  )
+                $('#flux-fee').text( (wSum/(iSum)*100) +"%"  )
             }
             
-            //console.log( (wSum/(iSum+wSum)*100) +"%"  );
+            //console.log( (wSum/(iSum)*100) +"%"  );
         });
         
     }) 
