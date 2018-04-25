@@ -1590,13 +1590,13 @@ function updateData(contract) {
         $('#CASHVALUE').text(convertWeiToEth(r).toFixed(4));
     } )
 
-    contract.getInvestSum(function (e, r){
+    contract.getInvestSum.call(function (e, r){
             if(r!=0)
             var iSum = r;
             else
             var iSum = 0;
 
-        contract.getWithdrawSum(function (e, x) {
+        contract.getWithdrawSum.call(function (e, x) {
             
             if(x!=0)
                 var wSum = x;
