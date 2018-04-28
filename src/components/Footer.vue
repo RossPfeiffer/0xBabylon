@@ -1,6 +1,6 @@
 <template>
 		<section id="final-section">
-			<a id="smart-contract-link" href="https://ropsten.etherscan.io/address/0xfdbe18537a9961a670b7c4e88a3cb879fc12771b" target="_blank">Smart Contract</a>
+			<a id="smart-contract-link" href="https://ropsten.etherscan.io/address/0x6e87f7cbd592ff58cc5d45a90623eca4dc8d10ff" target="_blank">Smart Contract</a>
 		</section>
 		</template>
 	<style lang="scss" scoped>
