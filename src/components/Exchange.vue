@@ -20,7 +20,7 @@
             <div id="buy-BEAR-cta-box" class="top right">
                 <div id="BEAR-token-buy" class="centerage">
                     <div class="doing-numbers">
-                        <input type="number" id="purchase-BEAR-amount" class="form-control" placeholder="ETH to convert (e.g. 0.12)">
+                        <input type="number" id="purchase-BEAR-amount" class="form-control" placeholder="Tokens to Sell (e.g. 12)">
                     </div>
                     <div class="buy-action">
                         <md-button id="buy-BEAR-tokens" class="cta">Buy BEAR BONDs</md-button> 
@@ -1418,7 +1418,7 @@ setTimeout(function(){
                         })
                     })
                     $('.SIMPLE-reinvest').click(function() {
-                        contract.reinvest(false,function(e, r) {
+                        contract.reinvest(function(e, r) {
                             console.log(e, r);
                         })
                     })
