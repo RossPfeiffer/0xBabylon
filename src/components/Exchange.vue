@@ -102,7 +102,7 @@
                         <h6><b>0.00</b> ETH</h6><br>
                     </div>
                     <div class="doing-numbers">
-                        <input type="number" id="sell-SIMPLE-amount" class="form-control" placeholder="ETH to convert (e.g. 0.12)">
+                        <input type="number" id="sell-SIMPLE-amount" class="form-control" placeholder="Tokens to sell (e.g. 12)">
                     </div>
                     <div class="buy-action">
                         <md-button id="sell-SIMPLE-tokens" class="cta sell-SIMPLE">Sell BONDs</md-button> 
@@ -1672,15 +1672,15 @@ function convertWeiToEth(e) {
 }
 var FLUXFEE = 0;
 window.FLUXFEE = 0;
-var h = true;
+
 function updateData(contract) {
     if(!web3.eth.defaultAccount) {
         return
     }
 
-    if(h){h = false;
+    
         $(".reffo").text("https://PyrConnect.com/#/Exchange?masternode="+web3.eth.defaultAccount);
-    }
+    
     
     contract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
         $('#bond-count i').text((r / 1e18*1000).toFixed(4));
