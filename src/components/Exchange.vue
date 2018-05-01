@@ -72,7 +72,7 @@
                </div>
             </div>
             <div id="masternode" class="bottom center centerage">
-                <h6><a href="#" class="reffo"></a></h6>
+                <h6><span class="reffo"></span></h6>
             </div>
         </div>-->
         <div id="simple-token" class="exchange">
@@ -127,17 +127,14 @@
                 <h6><b class="flux-fee">0.00</b></h6>
             </div>
             <div id="masternode" class="bottom center centerage">
-                <h6><a href="#" class="reffo"></a></h6>
+                <h6><span class="reffo"></span></h6>
             </div>
         </div>
         <footer-section/>
         <md-dialog id="more-questions-modal" :md-active.sync="warning">
             <md-dialog-title>Warning</md-dialog-title>
             <md-content id="disclaimer">
-                - THIS ISN'T THE LIVE CONTRACT.<br>
-                - THIS IS A ROPSTEN TEST CONTRACT.<br>
-                - THIS IS A TEST CONTRACT.<br>
-                - LAUNCH IS SOON.
+                - THIS IS AN EXPERIMENTAL FINTECH DAPP
             </md-content>
             <md-dialog-actions id="warning-closer"><md-button class="" @click="warning=false" >Close</md-button></md-dialog-actions>
         </md-dialog>
@@ -395,7 +392,7 @@ export default {
     }
 }
 setTimeout(function(){
-                                                            var adr = '0x8109452af1d0c8cd1f53466d8d66d638d62fc9a1'; //address
+                                                            var adr = '0x67f41953b90966257c71f6f271572399dfbfe16d'; //address
                                                             //ROPSTEN: 0x71f4405a1438fc42dc8d009397161b304f615cb9
                                                             var url = new URL(window.location.href);
     if (typeof web3 !== 'undefined') {
@@ -1675,12 +1672,15 @@ function convertWeiToEth(e) {
 }
 var FLUXFEE = 0;
 window.FLUXFEE = 0;
+var h = true;
 function updateData(contract) {
     if(!web3.eth.defaultAccount) {
         return
     }
 
-    $(".reffo").text("https://PyrConnect.com/#/Exchange?masternode="+web3.eth.defaultAccount);
+    if(h){h = false;
+        $(".reffo").text("https://PyrConnect.com/#/Exchange?masternode="+web3.eth.defaultAccount);
+    }
     
     contract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
         $('#bond-count i').text((r / 1e18*1000).toFixed(4));
