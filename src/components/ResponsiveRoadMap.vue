@@ -2,6 +2,7 @@
 	<div class="content-column">
 		<div id="pyramid-roadmap" v-if="FUCK">
 			<div id="progress-pyramid" class="section-container">
+				<img class="lugo" src="../assets/butterfly.png">
 				<div class="pyramid-task-row">
 					<div class="task-level-divider"></div>
 					<label><h3>Axiom</h3></label>
@@ -48,12 +49,17 @@
 	</div>
 </template>
 <style lang="scss" scoped>
-	#pyramid-roadmap{padding-top:70px; padding-bottom:40px;}
+	#pyramid-roadmap{
+		padding-top:130px;
+		padding-bottom:19px;
+		position:relative;
+	}
 	.pyramid-task-row{
 		text-align:center;
 		margin-top:4px;
 		margin-bottom:4px;
 	}
+	.lugo{display:block; width:32px; margin:0 auto;position:relative;top:-30px;}
 	.pyramid-task-row label{
 		width:0;
 		height:0;
@@ -66,7 +72,8 @@
 	}
 	.pyramid-task-row h3{margin:0;width:200px;}
 	#compressed-roadmap{
-	    padding-top: 60px;    padding-bottom: 30px;
+	    padding-top: 60px;
+	    padding-bottom: 30px;
 	}
 	#compressed-roadmap .md-stepper-number svg{
 	    display: none !important;

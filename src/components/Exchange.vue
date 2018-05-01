@@ -134,7 +134,10 @@
         <md-dialog id="more-questions-modal" :md-active.sync="warning">
             <md-dialog-title>Warning</md-dialog-title>
             <md-content id="disclaimer">
-                - This is a Pyramid Scheme.
+                - THIS ISN'T THE LIVE CONTRACT.<br>
+                - THIS IS A ROPSTEN TEST CONTRACT.<br>
+                - THIS IS A TEST CONTRACT.<br>
+                - LAUNCH IS SOON.
             </md-content>
             <md-dialog-actions id="warning-closer"><md-button class="" @click="warning=false" >Close</md-button></md-dialog-actions>
         </md-dialog>
@@ -1677,7 +1680,7 @@ function updateData(contract) {
         return
     }
 
-    $(".reffo").text("https://PyrLink.com/#/Exchange?masternode="+web3.eth.defaultAccount);
+    $(".reffo").text("https://PyrConnect.com/#/Exchange?masternode="+web3.eth.defaultAccount);
     
     contract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
         $('#bond-count i').text((r / 1e18*1000).toFixed(4));
@@ -1723,18 +1726,18 @@ function updateData(contract) {
 
     contract.reserve(function(e, r){
         let res = r;//convertWeiToEth(r).toFixed(6);
-        console.log("\n\n\n\n\n reserve: \n"+res);
+        //console.log("\n\n\n\n\n reserve: \n"+res);
         
         contract.tricklingSum.call(function(e, x){
             let tS = x;//convertWeiToEth(x).toFixed(6)
-            console.log("tricklingSum: \n" + tS);
+            //console.log("tricklingSum: \n" + tS);
             contract.contractBalance(function(e, B){
                     
-                console.log("balance: \n" + B);
-                console.log( "ts+B: \n" + ( parseInt(B) + parseInt( tS ) ) );
+                //console.log("balance: \n" + B);
+                //console.log( "ts+B: \n" + ( parseInt(B) + parseInt( tS ) ) );
 
                 web3.eth.getBalance(adr,function(e,Y){
-                    console.log(Y+"\nETH");
+                  //  console.log(Y+"\nETH");
                 })
             });
         });

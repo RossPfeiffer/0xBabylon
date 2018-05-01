@@ -1,8 +1,9 @@
 <template>
 	<section id="faqs-section">
+		<div class="cosmic-belt-bg"></div>
 		<div class="content-column">
 			<div id="faqs-container" >
-				<div><md-card class="qa-thing" md-inset="true">
+				<!-- <div><md-card class="qa-thing" md-inset="true">
 					<md-card-header>
 					<div class="md-title">Is this a Pyramid Scheme?</div>
 					</md-card-header>
@@ -21,22 +22,22 @@
 					<div class="md-title">If this is a Pyramid, why should I invest/gamble?</div>
 					</md-card-header>
 					<md-card-content>You are purchasing bonds from the community. The bonds you receive in exchange for your ETH are based on the height of the internal economy. If the economy is already doing well, the returned resolve tokens will diminish, but you'll be compensated in ETH.</md-card-content>
-				</md-card></div>
+				</md-card></div>-->
 				<div><md-card class="qa-thing">
 					<md-card-header><div class="md-title">How do I get Resolve Tokens?</div></md-card-header>
 					<md-card-content>Resolve tokens are obtained by selling bonds back to the smart contract. If you sell your bonds back at a dropped rate, you are licensed with more resolve tokens.</md-card-content>
 				</md-card></div>
 				<div><md-card class="qa-thing">
 					<md-card-header>
-					<div class="md-title">What do I need to purchase bonds?</div>
+					<div class="md-title">What is this?</div>
 					</md-card-header>
-					<md-card-content>You'll want to install <a href="#" target="_blank">Metamask</a>. Be sure to also have some Ether available. You can obtain some from an exchange like Bittrex.</md-card-content>
+					<md-card-content>PyrConnect is a self regulated lending platform disrupting the Securities Licensing space.</md-card-content>
 				</md-card></div>
 				<div><md-card class="qa-thing">
 					<md-card-header>
-					<div class="md-title">What kind of bonds are these?</div>
+					<div class="md-title">How can I Purchase Bonds?</div>
 					</md-card-header>
-					<md-card-content>These are a new type of bond. They are bound to an ecosystem of users that volunteer governance and community over eachother. These bonds secure the license to introduce taxable public services for people who want to be members of a decentralized and democratized society.</md-card-content>
+					<md-card-content>You'll want to install <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" target="_blank">Metamask</a>. Be sure to also have some Ether available. You can obtain some from an exchange like Bittrex.</md-card-content>
 				</md-card></div>
 				<div id="more-questions-gateway"><md-card >
 					<md-card-header><div class="md-title">More Questions?</div></md-card-header>
@@ -95,6 +96,22 @@
 								</md-card>
 							</div>
 						</md-tab>
+						<md-tab md-label="Strong Math">
+							<div class="questions-tab-content-grid">
+								<md-card>
+									<md-card-header>
+									<div class="md-title">Flux Fee</div>
+									</md-card-header>
+									<md-card-content>Okay. So,,, there is a Counter, for every bit of ethereum that comes in, and another Counter for every bit of ethereum that comes out. The Fee % ratio = OUT / IN.<br><br>If we put 100 ETH in, and someone dumps 25 ETH out, then the fee is 25%.<br> ... fee = 25 OUT / 100 IN</md-card-content>
+								</md-card>
+								<md-card>
+									<md-card-header>
+									<div class="md-title">Resolve Calculation</div>
+									</md-card-header>
+									<md-card-content>Resolve Tokens = <b>BONDs SOLD</b> times <b>ETH PAID IN</b> divided by <b>ETH PAID OUT</b></md-card-content>
+								</md-card>
+							</div>
+						</md-tab>
 					</md-tabs>
 					<md-dialog-actions>
 						<md-button class="" @click="showMoreQuestions=false" >Close</md-button>
@@ -105,6 +122,16 @@
 		</section>
 </template>
 <style lang="scss" scoped>
+	.cosmic-belt-bg{
+		position: absolute;
+		width:100%;
+		height:420px;
+		background-image:url('../assets/dark-blue-nebula-stars-of-soul.jpg');
+		background-size: cover;
+		opacity: 0.85;
+		filter: brightness(.3);
+	}
+
 	#faqs-section{
 		background-image:url('../assets/light-hole-planetary-entry.jpg');
 		background-position:center;

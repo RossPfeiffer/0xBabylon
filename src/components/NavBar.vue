@@ -4,22 +4,9 @@
 			<div class="cosmic-belt-bg"></div>		
 			<div class="content-column">
 				<nav id="logo-holder">
-				<!--<div id="ghost-drawer">
-					<drop droplistname="mobiledrop">
-					</drop>
-				</div>-->
-				<h2 class="md-title">0xBabylon</h2></nav>
-				<!--<nav id="home-nav">
-					<drop id="nav-home" droplistname="doesntmatterjusthastobeunique">
-						<md-button slot="dropper" md-menu-trigger @click="$router.push({ path: '/'})">Home</md-button>
-						<md-menu-item>Features</md-menu-item>
-						<md-menu-item>Road Map</md-menu-item>
-						<md-menu-item>FAQs</md-menu-item>
-						<md-menu-item>Smart Contract</md-menu-item>
-					</drop>
-				</nav>--><nav id="more-nav">
-					<!--<md-button @click="$router.push({ path: '/'})">Home</md-button>
-					<md-button @click="$router.push({ path: '/Exchange'})">Ropsten</md-button>-->
+				<h2 class="md-title"><img id="lugo" src="../assets/butterfly.png">PyrConnect</h2></nav>
+				<nav id="more-nav">
+					
 					<a href="/"><md-button >Home</md-button></a>
 					<a href="/#/Exchange"><md-button >Exchange</md-button></a>
 					<a href="https://discord.gg/3MmeM4U" target="_blank"><md-button >Community</md-button></a>
@@ -45,6 +32,10 @@
 </template>
 
 <style lang="scss" scoped>
+	#lugo{
+		width:32px;
+		margin-right:7px;
+	}
 	#ghost-bar{
 		position:fixed;
 		background:#ffffff00;
@@ -55,7 +46,7 @@
 	.deep-space-bg{		background-image:url('../assets/jagged-deep-warp-space.jpg');	}
 	.cosmic-belt-bg{		background-image:url('../assets/dark-blue-nebula-stars-of-soul.jpg');		opacity: 0.4;		filter: alpha(opacity=40);	}	
 	#ghost-bar .deep-space-bg,	#ghost-bar .cosmic-belt-bg{		position:absolute;		min-width:100%;		min-height:100%;		background-size: cover;		background-position: center;}
-	#ghost-bar h2{ display:inline-block;}
+	#ghost-bar h2{ display:inline-block; font-family:verdana;}
 	#ghost-bar{
 		z-index:6;
 	}
