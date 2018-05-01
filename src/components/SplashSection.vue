@@ -42,6 +42,7 @@
 		display:inline-block;
 		margin:0 auto;
 		top:-380px;
+		filter: sepia(70%) hue-rotate(150deg) brightness(60%) contrast(150%);
 	}
 	section > h2{text-align:center;}
 	#splash .deep-space-bg{
