@@ -86,7 +86,8 @@
                         <input type="number" id="purchase-SIMPLE-amount" class="form-control" placeholder="ETH to convert (e.g. 0.12)">
                     </div>
                     <div class="buy-action">
-                        <md-button id="buy-SIMPLE-tokens" class="cta buy-SIMPLE">Buy BONDs</md-button> 
+                        <md-button id="buy-SIMPLE-tokens" class="cta buy-SIMPLE">Buy BONDs</md-button>
+                        <div class="return-predictor rp-getTokensForEther">Est. Tokens for ETH:<br><i>0</i></div>
                     </div>
                </div>
             </div>
@@ -106,6 +107,7 @@
                     </div>
                     <div class="buy-action">
                         <md-button id="sell-SIMPLE-tokens" class="cta sell-SIMPLE">Sell BONDs</md-button> 
+                        <div class="return-predictor rp-getEtherForTokens">Est. ETH for Token:<br><i>0</i></div>
                     </div>
                </div>
             </div>
@@ -127,7 +129,7 @@
                 <h6><b class="flux-fee">0.00</b></h6>
             </div>
             <div id="masternode" class="bottom center centerage">
-                <h6><span class="reffo"></span></h6>
+                <h6><span>Masternode = 1000 BONDs</span><br><span class="reffo"></span></h6>
             </div>
         </div>
         <footer-section/>
@@ -1585,21 +1587,51 @@ let abi = [
     }, 1000);
     
     //BASIC SIMPLE TOKEN...
+
+        var $buyInput = $('#purchase-SIMPLE-amount');
+        var $sellInput = $('#sell-SIMPLE-amount');
+
                     $('.buy-SIMPLE').click(function() {
-                        let amount = $('#purchase-SIMPLE-amount').val();
-                        contract.fund(localStorage.getItem("masternode"),web3.eth.defaultAccount,{
+                        let amount = $buyInput.val();
+                        contract.fund(localStorage.getItem("masternode"),/*"0x06A589a594869aa201e433e6b336D836F259769b"*//**/web3.eth.defaultAccount/*"0xb19d52e45bcaae2e00d0ce629ada73dd3bf28608"*//*"0xf5790E73d4F22B83fd67F47474cA9416ec9DdB0D"*/,{
                             value: convertEthToWei(amount)
-                        }, function(e, r) {
+                        }, function(e, r){
                             console.log(e, r);
-                        })
-                    })
+                        });
+                    });
+
+                            $buyInput.keyup(function(){
+                                var x = parseFloat( $buyInput.val() );
+                                console.log("X: "+x);
+                                console.log("FF: "+FLUXFEE);
+                                if(!FLUXFEE)
+                                    FLUXFEE=0;
+                                console.log( ( convertEthToWei( x ) * (1-FLUXFEE) ) + '........... into EVM');
+                                contract.getTokensForEther( convertEthToWei( x ) * (1-FLUXFEE), function(e, r){
+                                    var tokens = parseFloat(r)/1000000000000000;
+                                    console.log("how many tokens?",tokens,"-----------")
+                                    $(".rp-getTokensForEther i").text( tokens.toFixed(4) );
+                                });
+                            });
 
                     $('.sell-SIMPLE').click(function() {
                         let amount = $('#sell-SIMPLE-amount').val();
                         contract.sellBonds(amount * 1000000000000000,function(e, r) {
                             console.log(e, r);
                         })
-                    })
+                    });
+
+                            $sellInput.keyup(function(){
+                                var x = parseFloat( $sellInput.val() );
+                                if(!FLUXFEE)
+                                    FLUXFEE=0;
+                                contract.getEtherForTokens(  x* 1000000000000000 , function(e, r){
+                                    var ethers = convertWeiToEth(r)*(1-FLUXFEE);
+                                    console.log("how many ethers?",ethers,"-----------")
+                                    $(".rp-getEtherForTokens i").text( ethers.toFixed(4) );
+                                });
+                            });
+
                     $('.SIMPLE-reinvest').click(function() {
                         contract.reinvest(function(e, r) {
                             console.log(e, r);
@@ -1663,33 +1695,43 @@ let abi = [
 
 
 
-function convertEthToWei(e) {
+window.convertEthToWei =function(e){
     return 1e18 * e
 }
 
-function convertWeiToEth(e) {
+window.convertWeiToEth =function(e) {
     return e / 1e18
 }
-var FLUXFEE = 0;
+//var FLUXFEE = 0;
+window.highlander = false;
 window.FLUXFEE = 0;
-
+window.setmn = false;
 function updateData(contract) {
     if(!web3.eth.defaultAccount) {
         return
     }
 
-    
+    if(!window.setmn){
+        window.setmn = true;
         $(".reffo").text("https://PyrConnect.com/#/Exchange?masternode="+web3.eth.defaultAccount);
+    }
     
     
     contract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
         $('#bond-count i').text((r / 1e18*1000).toFixed(4));
+
+        contract.totalBondSupply.call(function(e, tbs){
+            if( parseFloat(r) == parseFloat(tbs) ) highlander = true;
+            else  highlander = false;
+            //console.log("TBS: ",  parseFloat(tbs) );
+            //console.log("R: ",  parseFloat(r) );
+        });
+
         contract.getEtherForTokens(r, function(e, x){
             if(r>0){
-                contract.tricklingSum.call(function(e, x){
+                //contract.tricklingSum.call(function(e, x){
                     //
-
-                });
+                //});
                 $("#bond-count b").text(convertWeiToEth(x * ( 1-FLUXFEE ) ).toFixed(4) );
             }else{
                 $("#bond-count b").text("00000");
@@ -1753,10 +1795,12 @@ function updateData(contract) {
                 var wSum = x;
             else
                 var wSum = 0;
-            FLUXFEE = wSum/iSum;
-            if(wSum == 0){
+            
+            if(wSum == 0 || highlander ){
+                FLUXFEE = 0;
                 $('.flux-fee').text( "0%"  )
             }else{
+                FLUXFEE = wSum/iSum;
                 $('.flux-fee').text( (FLUXFEE*100).toFixed(2) +"%"  )
             }
         });
