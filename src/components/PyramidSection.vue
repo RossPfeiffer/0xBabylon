@@ -30,7 +30,7 @@
 
 
 			<pyramid-brick slot="basefour-task" title="How can I Buy-in?" category="Learn how to buy bonds & license resolve tokens." percent="2" >
-				You will need <a href="https://metamask.io" target="_blank">Metamask</a> in order to interact with the contract through this website.
+				You will need Ethereum (ETH) and <a href="https://metamask.io" target="_blank">Metamask</a> in order to interact with the contract through this website.
 			</pyramid-brick>
 			<pyramid-brick slot="basefour-task" title="How is this an ICO?" category="A new type of ICO that regulates itself" percent="7" >
 				<p>This ICO works very differently than regular ICO's. It uses the Bancor formula to increase the value of each bond in the contract & pays dividends (in ETH) to existing bond holders when anyone buys or sells. With founders at the center of the project, this means that they will recieve most of the earnings coming from the buy and sell fees.</p>

@@ -4,7 +4,6 @@
 		<splash-section/>
 		<features-section/>
 		<pyramid-section/>
-		<faqs-section/>
 		<footer-section/>
 	</div>
 </template>

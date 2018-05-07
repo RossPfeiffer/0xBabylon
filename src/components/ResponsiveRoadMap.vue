@@ -5,22 +5,22 @@
 				<img class="lugo" src="../assets/butterfly.png">
 				<div class="pyramid-task-row">
 					<div class="task-level-divider"></div>
-					<label><h3>Axiom</h3></label>
+					<label><h3>Project</h3></label>
 					<template slot-scope=""><slot name="whatone-task"/></template>
 				</div>
 				<div class="pyramid-task-row">
 					<div class="task-level-divider"></div>
-					<label><h3>Power</h3></label>
+					<label><h3>FinTech</h3></label>
 					<template slot-scope=""><slot name="bonustwo-task"/></template>
 				</div>
 				<div class="pyramid-task-row">
 					<div class="task-level-divider"></div>
-					<label><h3>Engine</h3></label>
+					<label><h3>Road Map</h3></label>
 					<template slot-scope=""><slot name="criticalthree-task"/></template>
 				</div>
 				<div class="pyramid-task-row">
 					<div class="task-level-divider"></div>
-					<label><h3>Foundation</h3></label>
+					<label><h3>FAQs</h3></label>
 					<template slot-scope=""><slot name="basefour-task"/></template>
 				</div>
 			</div>
@@ -28,19 +28,19 @@
 		<div id="compressed-roadmap" v-if="!FUCK">
 			  <div>
 			    <md-steppers md-vertical>
-			      <md-step class="basefloor-tasks" md-label="Foundation">
+			      <md-step class="basefloor-tasks" md-label="FAQs">
 			        <template slot-scope=""><slot name="basefour-task" /></template>
 			      </md-step>
 
-			      <md-step class="criticalthree-tasks" md-label="Engine">
+			      <md-step class="criticalthree-tasks" md-label="Road Map">
 			        <template slot-scope=""><slot name="criticalthree-task" /></template>
 			      </md-step>
 
-			      <md-step class="bonustwo-tasks" md-label="Power">
+			      <md-step class="bonustwo-tasks" md-label="FinTech">
 			        <template slot-scope=""><slot name="bonustwo-task" /></template>
 			      </md-step>
 
-			      <md-step class="whatone-task" md-label="Axiom">
+			      <md-step class="whatone-task" md-label="Project">
 			        <template slot-scope=""><slot name="whatone-task" /></template>
 			      </md-step>
 			    </md-steppers>
@@ -59,7 +59,7 @@
 		margin-top:4px;
 		margin-bottom:4px;
 	}
-	.lugo{display:block; width:32px; margin:0 auto;position:relative;top:-30px;}
+	.lugo{display:block; width:32px; margin:0 auto;position:relative;top:-60px;}
 	.pyramid-task-row label{
 		width:0;
 		height:0;
