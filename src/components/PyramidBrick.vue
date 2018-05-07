@@ -5,8 +5,8 @@
 		    <md-card-header>
 		      <div class="md-title">{{title}}</div>
 		      <div class="md-subhead">{{category}}</div>
-		    </md-card-header>
-		    <div class="measured-progress"><md-progress-bar md-mode="determinate" :md-value="percent"></md-progress-bar><span class="numeric-percent">{{percent}}%</span></div>
+		    </md-card-header><!--
+		    <div class="measured-progress"><md-progress-bar md-mode="determinate" :md-value="percent"></md-progress-bar><span class="numeric-percent">{{percent}}%</span></div>-->
 		  </md-ripple>
 		  <md-dialog class="task-modal" :md-active.sync="elaborated">
 			<md-dialog-title>{{title}}<div class="md-subhead">{{category}}</div></md-dialog-title>
