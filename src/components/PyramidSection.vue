@@ -8,10 +8,11 @@
 
 
 			<pyramid-brick slot="bonustwo-task" title="Flux Fee" category="A dynamic fee based on invested ethereum" percent=0 >
-				Flux Fee Calculator COMING VERY SOON
+			The fee equals exported ETH divided by imported ETH. The counter for both exported and imported ETH never resets.<br>
+				<demo-flux></demo-flux>
 			</pyramid-brick>
 			<pyramid-brick slot="bonustwo-task" title="Resolve Tokens" category="Licensing assets to tax the community" percent=0 >
-				Resolve Token Calculator COMING VERY SOON
+				<demo-resolver></demo-resolver>
 			</pyramid-brick>
 			
 

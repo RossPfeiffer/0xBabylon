@@ -102,7 +102,7 @@
 									<md-card-header>
 									<div class="md-title">Flux Fee</div>
 									</md-card-header>
-									<md-card-content>Okay. So,,, there is a Counter, for every bit of ethereum that comes in, and another Counter for every bit of ethereum that comes out. The Fee % ratio = OUT / IN.<br><br>If we put 100 ETH in, and someone dumps 25 ETH out, then the fee is 25%.<br> ... fee = 25 OUT / 100 IN</md-card-content>
+									<md-card-content>Okay. There is a Counter, for every bit of ethereum that comes in, and another Counter for every bit of ethereum that comes out. The Fee % ratio = OUT / IN.<br><br>If we put 100 ETH in, and someone dumps 25 ETH out, then the fee is 25%.<br> ... fee = 25 OUT / 100 IN</md-card-content>
 								</md-card>
 								<md-card>
 									<md-card-header>

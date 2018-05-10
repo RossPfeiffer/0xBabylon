@@ -16,11 +16,14 @@ Vue.component('hlx-button',HlxButton);
 import NavBar from './components/NavBar.vue'
 Vue.component('nav-bar',NavBar);
 
-import AssocTopo from './components/AssocTopo.vue'
-Vue.component('assoc-topo',AssocTopo);
+import DemoCalcInput from './components/DemoCalcInput.vue'
+Vue.component('demo-calc-input',DemoCalcInput);
 
-import PathCard from './components/PathCard.vue'
-Vue.component('path-card',PathCard);
+import DemoResolver from './components/DemoResolver.vue'
+Vue.component('demo-resolver',DemoResolver);
+
+import DemoFlux from './components/DemoFlux.vue'
+Vue.component('demo-flux',DemoFlux);
 
 //home
 	import SplashSection from './components/SplashSection.vue'

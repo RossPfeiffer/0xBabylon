@@ -40,8 +40,7 @@ export default {
 	}),
 	props:{	
 		title: String,
-		category: String,
-		percent: Number
+		category: String
 	}
 }
 </script>
