@@ -8,7 +8,7 @@
 				<nav id="more-nav">
 					
 					<a href="/"><md-button >Home</md-button></a>
-					<a href="/#/Exchange"><md-button >Exchange</md-button></a>
+					<a href="#" @click="jumpToExchange"><md-button >Exchange</md-button></a>
 					<a href="https://discord.gg/3MmeM4U" target="_blank"><md-button >Community</md-button></a>
 				</nav>
 			</div>	
@@ -127,6 +127,9 @@ export default{
 	methods:{
 		tabTo:function(to){
 			this.tab = to;
+		},
+		jumpToExchange:function(){
+			window.location.assign("https://PyrConnect.com/#/Exchange");
 		}
 	},
 	created:function(){

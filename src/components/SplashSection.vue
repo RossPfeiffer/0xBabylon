@@ -22,7 +22,7 @@
 				<div class="position-retainer"><div id="bottom-center-splash">
 					<!--<div id="floored-cta">-->
 					
-					<md-button class="md-raised splash-button" ><a href="/#/Exchange" style="color:white;">Enter Exchange</a></md-button>
+					<md-button class="md-raised splash-button"  @click="jumpToExchange"><a href="#" style="color:white;">Enter Exchange</a></md-button>
 						<div id="clock1"></div>
 					</div>
 				</div></div>
@@ -143,9 +143,19 @@
 
 <script>
 export default {
-	name: "SPLASHACTION"
+	name: "SPLASHACTION",
+	methods:{
+		jumpToExchange:function(){
+			window.location.assign("https://PyrConnect.com/#/Exchange");
+		}
+	}
 }
 /*!
+
+,
+		jumpToExchange:function(){
+			window.location.assign("https://PyrConnect.com/#/Exchange");
+		}
  * The Final Countdown for jQuery v2.2.0 (http://hilios.github.io/jQuery.countdown/)
  * Copyright (c) 2016 Edson Hilios
  * 

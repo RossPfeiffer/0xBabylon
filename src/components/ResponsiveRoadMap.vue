@@ -28,21 +28,22 @@
 		<div id="compressed-roadmap" v-if="!FUCK">
 			  <div>
 			    <md-steppers md-vertical>
-			      <md-step class="basefloor-tasks" md-label="FAQs">
-			        <template slot-scope=""><slot name="basefour-task" /></template>
-			      </md-step>
-
-			      <md-step class="criticalthree-tasks" md-label="Road Map">
-			        <template slot-scope=""><slot name="criticalthree-task" /></template>
+			      <md-step class="whatone-task" md-label="Project">
+			        <template slot-scope=""><slot name="whatone-task" /></template>
 			      </md-step>
 
 			      <md-step class="bonustwo-tasks" md-label="FinTech">
 			        <template slot-scope=""><slot name="bonustwo-task" /></template>
 			      </md-step>
-
-			      <md-step class="whatone-task" md-label="Project">
-			        <template slot-scope=""><slot name="whatone-task" /></template>
+			      
+			      <md-step class="criticalthree-tasks" md-label="Road Map">
+			        <template slot-scope=""><slot name="criticalthree-task" /></template>
 			      </md-step>
+
+			      <md-step class="basefloor-tasks" md-label="FAQs">
+			        <template slot-scope=""><slot name="basefour-task" /></template>
+			      </md-step>
+
 			    </md-steppers>
 			  </div>
 		</div>
