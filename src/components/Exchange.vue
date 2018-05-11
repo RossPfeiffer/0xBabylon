@@ -2700,11 +2700,13 @@ let OG_abi = [
                                 var x = parseFloat( $buyInput_MIRROR.val() );
                                 if(!MIRROR_FLUX)
                                     MIRROR_FLUX=0;
-                                mirrorContract.getTokensForEther( convertEthToWei( x ) * (1-MIRROR_FLUX), function(e, r){
-                                    var tokens = parseFloat(r)/1000000000000000;
-                                    console.log("how many tokens?",tokens,"-----------")
-                                    $(".rp-getTokensForEther i").text( tokens.toFixed(4) );
-                                });
+                                if(MIRROR_BONDS>0){
+                                    mirrorContract.getTokensForEther( convertEthToWei( x ) * (1-MIRROR_FLUX), function(e, r){
+                                        var tokens = parseFloat(r)/1000000000000000;
+                                        console.log("how many tokens?",tokens,"-----------")
+                                        $(".rp-getTokensForEther i").text( tokens.toFixed(4) );
+                                    });
+                                }
                             });
 
                     $('.sell-MIRROR').click(function() {
@@ -2718,9 +2720,9 @@ let OG_abi = [
                                 var x = parseFloat( $sellInput_MIRROR.val() );
                                 if(!MIRROR_FLUX)
                                     MIRROR_FLUX=0;
-                                if(BONDS>0){
-                                    var theseBonds=BONDS*1000000000000000;
-                                    console.log("BONDS: ",BONDS);
+                                if(MIRROR_BONDS>0){
+                                    var theseBonds=MIRROR_BONDS*1000000000000000;
+                                    console.log("MIRROR_BONDS: ",MIRROR_BONDS);
                                     console.log("x: ",x* 1000000000000000);
                                     mirrorContract.getEtherForTokens(  Math.max(x* 1000000000000000, 0)  , function(e, r){
                                         var ethers = convertWeiToEth(r)*(1-MIRROR_FLUX);
@@ -2759,11 +2761,13 @@ let OG_abi = [
                                 var x = parseFloat( $buyInput_SHADOW.val() );
                                 if(!SHADOW_FLUX)
                                     SHADOW_FLUX=0;
-                                shadowContract.getTokensForEther( convertEthToWei( x ) * (1-SHADOW_FLUX), function(e, r){
-                                    var tokens = parseFloat(r)/1000000000000000;
-                                    console.log("how many tokens?",tokens,"-----------")
-                                    $(".rp-getTokensForEther i").text( tokens.toFixed(4) );
-                                });
+                                if(SHADOW_BONDS>0){    
+                                    shadowContract.getTokensForEther( convertEthToWei( x ) * (1-SHADOW_FLUX), function(e, r){
+                                        var tokens = parseFloat(r)/1000000000000000;
+                                        console.log("how many tokens?",tokens,"-----------")
+                                        $(".rp-getTokensForEther i").text( tokens.toFixed(4) );
+                                    });
+                                }
                             });
 
                     $('.sell-SHADOW').click(function() {
@@ -2777,9 +2781,9 @@ let OG_abi = [
                                 var x = parseFloat( $sellInput_SHADOW.val() );
                                 if(!SHADOW_FLUX)
                                     SHADOW_FLUX=0;
-                                if(BONDS>0){
-                                    var theseBonds=BONDS*1000000000000000;
-                                    console.log("BONDS: ",BONDS);
+                                if(SHADOW_BONDS>0){
+                                    var theseBonds=SHADOW_BONDS*1000000000000000;
+                                    console.log("SHADOW_BONDS: ",SHADOW_BONDS);
                                     console.log("x: ",x* 1000000000000000);
                                     shadowContract.getEtherForTokens(  Math.max(x* 1000000000000000, 0)  , function(e, r){
                                         var ethers = convertWeiToEth(r)*(1-SHADOW_FLUX);
@@ -2814,7 +2818,8 @@ window.highlander = false;
 window.SHADOW_FLUX = 0;
 window.MIRROR_FLUX = 0;
 window.setmn = false;
-window.BONDS = null;
+window.MIRROR_BONDS = null;
+window.SHADOW_BONDS = null;
 function updateData(mirrorContract,shadowContract) {
     if(!web3.eth.defaultAccount) {
         return
@@ -2828,7 +2833,7 @@ function updateData(mirrorContract,shadowContract) {
     //------------------------------------------------------------   MIRROR FLUX      
                     mirrorContract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
                         $('#MIRROR-token .bond-stake-info i').text((r / 1e18*1000).toFixed(4));
-                        BONDS = parseFloat(r / 1e18*1000);
+                        MIRROR_BONDS = parseFloat(r / 1e18*1000);
                         mirrorContract.totalBondSupply.call(function(e, tbs){
                             if( parseFloat(r) == parseFloat(tbs) )
                                 highlander = true;
@@ -2898,7 +2903,7 @@ function updateData(mirrorContract,shadowContract) {
     //------------------------------------------------------------   SHADOW FLUX      
                     shadowContract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
                         $('#SHADOW-token .bond-stake-info i').text((r / 1e18*1000).toFixed(4));
-                        BONDS = parseFloat(r / 1e18*1000);
+                        SHADOW_BONDS = parseFloat(r / 1e18*1000);
                         shadowContract.totalBondSupply.call(function(e, tbs){
                             if( parseFloat(r) == parseFloat(tbs) )
                                 highlander = true;
