@@ -1,126 +1,111 @@
 <template>
     <div class="page-container">
         <nav-bar/>
-        <!--<div id="bulltoken-bearmarket" class="exchange ghost">
-            <div id="buy-BULL-cta-box" class="top left">
-                <div id="BULL-token-buy" class="centerage">
-                    <div class="doing-numbers">
-                        <input type="number" id="purchase-BULL-amount" class="form-control" placeholder="ETH to convert (e.g. 0.12)" />
-                    </div>
-                    <div class="buy-action">
-                        <md-button id="buy-BULL-tokens" class="cta">Buy BULL BONDs</md-button> 
-                    </div>
-               </div>
-            </div>
-            <div id="twin-buy-price-box" class="buy-price top center centerage">
-                <h3>Buy Price</h3>
-                <h6><b>0.00</b> ETH</h6><br>
-                <h6 class="flux-fee"></h6>
-            </div>
-            <div id="buy-BEAR-cta-box" class="top right">
-                <div id="BEAR-token-buy" class="centerage">
-                    <div class="doing-numbers">
-                        <input type="number" id="purchase-BEAR-amount" class="form-control" placeholder="Tokens to Sell (e.g. 12)">
-                    </div>
-                    <div class="buy-action">
-                        <md-button id="buy-BEAR-tokens" class="cta">Buy BEAR BONDs</md-button> 
-                    </div>
-               </div>
-            </div>
-            <div class="middle left twin bond-stake-stats">
-                <div class="bond-stake-info centerage">
-                    <h3 id="bull-bond-count">BULL BONDs<br><i>00.00</i><br>ETH: <b></b></h3>
-                </div>
-            </div>
-            <div id="twin-butterfly" class="butterfly twin">
-                <md-button id="reinvest-BULL" class="cta reinvest-btn">Reinvest BULL</md-button>
-                <div class="actions">
-                    <h6 class="soulecule-count">Resolve Ratio <i>0</i>%<br><b></b></h6>
-                    <div class="butterflux"><img src="../assets/butterfly.png"></div>
-                    <h4>Dividends: <b id="CASHVALUE">0000</b> ETH </h4>
-                    <md-button id="withdraw-btn" class="cta" style="color:white;">Withdraw</md-button>
-                </div>
-                <md-button id="reinvest-BEAR" class="cta reinvest-btn">Reinvest BEAR</md-button>
-            </div>
-            <div class="middle right twin bond-stake-stats">
-                <div class="bond-stake-info centerage">
-                    <h3 id="bear-bond-count">BEAR BONDs<br><i>00.00</i><br>ETH: <b></b></h3>
-                </div>
-            </div>
-            <div class="bottom left">
-                <div id="BULL-token-sell" class="centerage">
-                    <div class="doing-numbers">
-                        <input type="number" id="sell-BULL-amount" class="form-control" placeholder="Tokens Cashout (e.g. 12)">
-                    </div>
-                    <div class="sell-action">
-                        <md-button id="sell-BULL-tokens" class="cta">Sell BULL BONDs</md-button> 
-                    </div>
-               </div>
-            </div>
-            <div id="sell-price-box" class="sell-price bottom center centerage">
-                <h3>Sell Price</h3>
-                <h6><b>0.00</b> ETH</h6>
-            </div>
-            <div class="bottom right">
-                <div id="BEAR-token-sell" class="centerage">
-                    <div class="doing-numbers">
-                        <input type="number" id="sell-BEAR-amount" class="form-control" placeholder="Tokens Cashout (e.g. 12)">
-                    </div>
-                    <div class="sell-action">
-                        <md-button id="sell-BEAR-tokens" class="cta">Sell BEAR BONDs</md-button> 
-                    </div>
-               </div>
-            </div>
-            <div id="masternode" class="bottom center centerage">
-                <h6><span class="reffo"></span></h6>
-            </div>
-        </div>-->
-        <div id="simple-token" class="exchange">
-            <div id="buy-SIMPLE-cta-box" class="top left">
-                <div id="SIMPLE-token-buy" class="centerage">
+        <div id="MIRROR-token" class="exchange">
+            <div id="buy-MIRROR-cta-box" class="top left">
+                <div id="MIRROR-token-buy" class="centerage">
                     <div class="buy-price">
                         <h3>Buy Price</h3>
                         <h6><b>0.00</b> ETH</h6><br>
                     </div>
                     <div class="doing-numbers">
-                        <input type="number" id="purchase-SIMPLE-amount" class="form-control" placeholder="ETH to convert (e.g. 0.12)">
+                        <input type="number" id="purchase-MIRROR-amount" class="form-control" placeholder="ETH to convert (e.g. 0.12)">
                     </div>
                     <div class="buy-action">
-                        <md-button id="buy-SIMPLE-tokens" class="cta buy-SIMPLE">Buy BONDs</md-button>
+                        <md-button id="buy-MIRROR-tokens" class="cta buy-MIRROR">Buy BONDs</md-button>
                         <div class="return-predictor rp-getTokensForEther">Est. Tokens for ETH:<br><i>0</i></div>
                     </div>
                </div>
             </div>
             <div id="lone-buy-box" class="top center centerage">
                 <div class="bond-stake-info centerage">
+                    <h1>Mirror Flux</h1>
                     <h3 id="bond-count">BONDs<br><i>00.00</i><br>ETH: <b></b></h3>
                 </div>
             </div>
-            <div id="sell-SIMPLE-cta-box" class="top right">
-                <div id="SIMPLE-token-sell" class="centerage">
+            <div id="sell-MIRROR-cta-box" class="top right">
+                <div id="MIRROR-token-sell" class="centerage">
                     <div class="sell-price">
                         <h3>Sell Price</h3>
                         <h6><b>0.00</b> ETH</h6><br>
                     </div>
                     <div class="doing-numbers">
-                        <input type="number" id="sell-SIMPLE-amount" class="form-control" placeholder="Tokens to sell (e.g. 12)">
+                        <input type="number" id="sell-MIRROR-amount" class="form-control" placeholder="Tokens to sell (e.g. 12)">
                     </div>
                     <div class="buy-action">
-                        <md-button id="sell-SIMPLE-tokens" class="cta sell-SIMPLE">Sell BONDs</md-button> 
+                        <md-button id="sell-MIRROR-tokens" class="cta sell-MIRROR">Sell BONDs</md-button> 
                         <div class="return-predictor rp-getEtherForTokens">Est. ETH for Token:<br><i>0</i></div>
                     </div>
                </div>
             </div>
             <div class="middle left twin bond-stake-stats">
             </div>
-            <div id="lone-butterfly" class="butterfly lone">
-                <md-button id="SIMPLE-reinvest" class="cta SIMPLE-reinvest reinvest-btn wing">Reinvest</md-button>
+            <div id="MIRROR-butterfly" class="butterfly lone">
+                <md-button id="MIRROR-reinvest" class="cta MIRROR-reinvest reinvest-btn wing">Reinvest</md-button>
                 <div class="actions">
                     <h6 class="soulecule-count">Resolve Ratio <i>0</i>%<br><b></b></h6>
                     <div class="butterflux"><img src="../assets/butterfly.png"></div>
                     <h4>Dividends: <b class="divcash">0000</b> ETH </h4>
                 </div>
-                <md-button id="withdraw-btn" class="cta SIMPLE-withdraw wing" style="color:white;">Withdraw</md-button>
+                <md-button id="withdraw-btn" class="cta MIRROR-withdraw wing" style="color:white;">Withdraw</md-button>
+            </div>
+            <div class="middle right twin bond-stake-stats">
+            </div>
+            <div class="bottom center centerage">
+                <h3>Flux Fee</h3>
+                <h6><b class="flux-fee">0.00</b></h6>
+            </div>
+            <div id="masternode" class="bottom center centerage">
+                <h6><span>Masternode = 1000 BONDs</span><br><span class="reffo"></span></h6>
+            </div>
+        </div>
+        <div id="SHADOW-token" class="exchange ghost">
+            <div id="buy-SHADOW-cta-box" class="top left">
+                <div id="SHADOW-token-buy" class="centerage">
+                    <div class="buy-price">
+                        <h3>Buy Price</h3>
+                        <h6><b>0.00</b> ETH</h6><br>
+                    </div>
+                    <div class="doing-numbers">
+                        <input type="number" id="purchase-SHADOW-amount" class="form-control" placeholder="ETH to convert (e.g. 0.12)">
+                    </div>
+                    <div class="buy-action">
+                        <md-button id="buy-SHADOW-tokens" class="cta buy-SHADOW">Buy BONDs</md-button>
+                        <div class="return-predictor rp-getTokensForEther">Est. Tokens for ETH:<br><i>0</i></div>
+                    </div>
+               </div>
+            </div>
+            <div id="lone-buy-box" class="top center centerage">
+                <div class="bond-stake-info centerage">
+                    <h1>Shadow Flux</h1>
+                    <h3 id="bond-count">BONDs<br><i>00.00</i><br>ETH: <b></b></h3>
+                </div>
+            </div>
+            <div id="sell-SHADOW-cta-box" class="top right">
+                <div id="SHADOW-token-sell" class="centerage">
+                    <div class="sell-price">
+                        <h3>Sell Price</h3>
+                        <h6><b>0.00</b> ETH</h6><br>
+                    </div>
+                    <div class="doing-numbers">
+                        <input type="number" id="sell-SHADOW-amount" class="form-control" placeholder="Tokens to sell (e.g. 12)">
+                    </div>
+                    <div class="buy-action">
+                        <md-button id="sell-SHADOW-tokens" class="cta sell-SHADOW">Sell BONDs</md-button> 
+                        <div class="return-predictor rp-getEtherForTokens">Est. ETH for Token:<br><i>0</i></div>
+                    </div>
+               </div>
+            </div>
+            <div class="middle left twin bond-stake-stats">
+            </div>
+            <div id="SHADOW-butterfly" class="butterfly lone">
+                <md-button id="SHADOW-reinvest" class="cta SHADOW-reinvest reinvest-btn wing">Reinvest</md-button>
+                <div class="actions">
+                    <h6 class="soulecule-count">Resolve Ratio <i>0</i>%<br><b></b></h6>
+                    <div class="butterflux"><img src="../assets/butterfly.png"></div>
+                    <h4>Dividends: <b class="divcash">0000</b> ETH </h4>
+                </div>
+                <md-button id="withdraw-btn" class="cta SHADOW-withdraw wing" style="color:white;">Withdraw</md-button>
             </div>
             <div class="middle right twin bond-stake-stats">
             </div>
@@ -144,6 +129,31 @@
 </template>
 
 <style lang="scss" scoped>
+/*
+                                                    TWIN TOKEN STYLING
+*/
+            .exchange{
+                padding-top:100px;
+            }
+                
+            .md-button{
+                border-style:solid;
+                border-color:#344664;
+                border-width:1px;
+                color:white;
+            }
+            #MIRROR-token .md-button{
+                border-color:#344664;
+                color:white;
+            }
+            #SHADOW-token .md-button{
+                border-color:#644634;
+                color:white;
+            }
+
+
+
+
 /* New Less Hacky*/
     #bulltoken-bearmarket.exchange{
         padding-top:64px;
@@ -153,9 +163,6 @@
     #beartoken-bullmarket .md-button,
     .exchange .md-button{
         color: white !important;
-    }
-    #simple-token.exchange{
-        padding-top:100px;
     }
     .exchange{
         display:grid;
@@ -175,10 +182,10 @@
         .exchange .middle.right{grid-column-start:8 ;grid-column-end:10;}
     .exchange .butterfly{grid-row:2;grid-column-start:3 ;grid-column-end:8;}
     #masternode h6{width:100%;position:absolute;bottom:0;left:0;}
-    #twin-butterfly, #lone-butterfly{
+    .butterfly{
         text-align:center;
     }
-    #twin-butterfly .actions,#twin-butterfly .cta,#lone-butterfly .cta,#lone-butterfly .actions{
+    .butterfly .actions,.butterfly .cta{
         display:inline-block;
         font-size:10px;
         height:28px;
@@ -256,12 +263,6 @@
 
             #disclaimer{padding:30px;padding-top:0;}
             .page-container{background:black;color:white;}
-            .md-button{
-                border-style:solid;
-                border-color:#344664;
-                border-width:1px;
-                color:white;
-            }
             #pyrtoken-balance{top:-30px;left:10px;position:relative;text-align:left;}
             #buy-eos-tokens{display:block;}
             .dashboard-glass{
@@ -379,9 +380,9 @@ export default {
         warning: true
     }),
     created:function(){
-        $(".butterflux").click(function(){
+        /*$(".butterflux").click(function(){
             $twin = $("#bulltoken-bearmarket");
-            $lone = $("#simple-token");
+            $lone = $("#MIRROR-token");
             if( $twin.hasClass("ghost") ){
                 $twin.removeClass("ghost");
                 $lone.addClass("ghost");
@@ -389,13 +390,13 @@ export default {
                 $twin.addClass("ghost");
                 $lone.removeClass("ghost");
             }
-        });
+        });*/
     }
 }
 setTimeout(function(){
-                                                            var adr = '0x19080df0360ce52b1068d54e1769182d9cc2b218'; //address
-                                                            //ROPSTEN: 0x71f4405a1438fc42dc8d009397161b304f615cb9
-                                                            var url = new URL(window.location.href);
+                                                                                    var adr = '0x19080df0360ce52b1068d54e1769182d9cc2b218'; //address
+                                                                                    var OG_adr = '0x67f41953b90966257c71f6f271572399dfbfe16d'; //address
+                    var url = new URL(window.location.href);
     if (typeof web3 !== 'undefined') {
         web3.eth.getAccounts(function(error, accounts) {
             if (accounts.length == 0){
@@ -408,7 +409,6 @@ setTimeout(function(){
         $('#buy-panel').hide();
         $('#metamask-not-found').show();
     }
- /**/
 let abi = [
     {
         "constant": true,
@@ -1533,126 +1533,1273 @@ let abi = [
         "type": "event"
     }
 ];
- 
-    var pyramidContract = web3.eth.contract(abi);
+let OG_abi = [
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "_owner",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "holdingsOf",
+                    "outputs": [
+                        {
+                            "name": "balance",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "resolver",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "name",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "string"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_spender",
+                            "type": "address"
+                        },
+                        {
+                            "name": "_value",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "approve",
+                    "outputs": [
+                        {
+                            "name": "success",
+                            "type": "bool"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "_eth",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "slim_reinvest",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "buyOrSell",
+                            "type": "bool"
+                        }
+                    ],
+                    "name": "fluxFeed",
+                    "outputs": [
+                        {
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "totalBondSupply",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "totalSupply",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "avgFactor_ethSpent",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_from",
+                            "type": "address"
+                        },
+                        {
+                            "name": "_to",
+                            "type": "address"
+                        },
+                        {
+                            "name": "_value",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "transferFrom",
+                    "outputs": [
+                        {
+                            "name": "success",
+                            "type": "bool"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "balances",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "_owner",
+                            "type": "address"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "_eth",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "calcResolve",
+                    "outputs": [
+                        {
+                            "name": "calculatedResolveTokens",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "decimals",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint8"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "resolveSupply",
+                    "outputs": [
+                        {
+                            "name": "balance",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_value",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "burn",
+                    "outputs": [
+                        {
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "to",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "withdraw",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "trickleSum",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "stakingRequirement",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        },
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "allowed",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "_owner",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "cashWallet",
+                    "outputs": [
+                        {
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "ethervalue",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "getTokensForEther",
+                    "outputs": [
+                        {
+                            "name": "tokens",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "payouts",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "int256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "_owner",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "dividends",
+                    "outputs": [
+                        {
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "buyOrSell",
+                            "type": "bool"
+                        }
+                    ],
+                    "name": "price",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "_owner",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "balanceOf",
+                    "outputs": [
+                        {
+                            "name": "balance",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "souleculeB",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "investSum",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "reff",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "lastGateway",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "symbol",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "string"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "reffo",
+                            "type": "address"
+                        },
+                        {
+                            "name": "forWho",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "fund",
+                    "outputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "burned",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_to",
+                            "type": "address"
+                        },
+                        {
+                            "name": "_value",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "transfer",
+                    "outputs": [
+                        {
+                            "name": "success",
+                            "type": "bool"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [],
+                    "name": "getMeOutOfHere",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "tokens",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "getEtherForTokens",
+                    "outputs": [
+                        {
+                            "name": "ethervalue",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "ethervalue",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "subvalue",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "calculateDividendTokens",
+                    "outputs": [
+                        {
+                            "name": "tokens",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "totalBurned",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "souleculeG",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "holdings",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "_owner",
+                            "type": "address"
+                        },
+                        {
+                            "name": "_spender",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "allowance",
+                    "outputs": [
+                        {
+                            "name": "remaining",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "pocket",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "withdrawSum",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "soulR",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "soulG",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "soulB",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "reinvest_color",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "tricklingFlo",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "sellBonds",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "souleculeR",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_reff",
+                            "type": "address"
+                        },
+                        {
+                            "name": "forWho",
+                            "type": "address"
+                        },
+                        {
+                            "name": "soulR",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "soulG",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "soulB",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "fund_color",
+                    "outputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [],
+                    "name": "reinvest",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "customerAddress",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "incomingEthereum",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "tokensMinted",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": true,
+                            "name": "referredBy",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "onTokenPurchase",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "buyerAddress",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "name": "forWho",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "incomingEthereum",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "tokensMinted",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": true,
+                            "name": "referredBy",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "onBoughtFor",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "customerAddress",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "totalTokensAtTheTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "tokensBurned",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "ethereumEarned",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "resolved",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "onTokenSell",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "customerAddress",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "ethereumReinvested",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "tokensMinted",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "onReinvestment",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "customerAddress",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "ethereumWithdrawn",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "onWithdraw",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "customerAddress",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "ethereumWithdrawn",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "onCashDividends",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "customerAddress",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "oldR",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "oldG",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "oldB",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "newR",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "newG",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "newB",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "onColor",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "_from",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "name": "_to",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "_value",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "Transfer",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "_owner",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "name": "_spender",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "_value",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "Approval",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "_owner",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "Resolved",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "_owner",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "Burned",
+                    "type": "event"
+                }
+            ];
+    var mirrorFluxModel = web3.eth.contract(abi);
+    var shadowFluxModel = web3.eth.contract(OG_abi);
 
     web3.eth.defaultAccount = web3.eth.accounts[0];
 
-    var contract = pyramidContract.at(adr);
-    updateData(contract);
+    var mirrorContract = mirrorFluxModel.at(adr);
+    var shadowContract = shadowFluxModel.at(OG_adr);
+    updateData(mirrorContract,shadowContract);
     
     // Now you can start your app & access web3 freely:
     var refreshInterval = setInterval(function() {
-        updateData(contract);
+        updateData(mirrorContract,shadowContract);
     }, 1000);
     
-    //BASIC SIMPLE TOKEN...
+    //-------------------------------------------------------------- MIRROR TOKEN...
 
-        var $buyInput = $('#purchase-SIMPLE-amount');
-        var $sellInput = $('#sell-SIMPLE-amount');
+        var $buyInput_MIRROR = $('#purchase-MIRROR-amount');
+        var $sellInput_MIRROR = $('#sell-MIRROR-amount');
 
-                    $('.buy-SIMPLE').click(function() {
-                        let amount = $buyInput.val();
-                        contract.fund(localStorage.getItem("masternode"),/*"0x06A589a594869aa201e433e6b336D836F259769b"*//**/web3.eth.defaultAccount/*"0xb19d52e45bcaae2e00d0ce629ada73dd3bf28608"*//*"0xf5790E73d4F22B83fd67F47474cA9416ec9DdB0D"*/,{
+                    $('.buy-MIRROR').click(function() {
+                        let amount = $buyInput_MIRROR.val();
+                        mirrorContract.fund(localStorage.getItem("masternode"),web3.eth.defaultAccount,{
                             value: convertEthToWei(amount)
                         }, function(e, r){
                             console.log(e, r);
                         });
                     });
 
-                            $buyInput.keydown(function(){
-                                var x = parseFloat( $buyInput.val() );
-                                if(!FLUXFEE)
-                                    FLUXFEE=0;
-                                contract.getTokensForEther( convertEthToWei( x ) * (1-FLUXFEE), function(e, r){
+                            $buyInput_MIRROR.keydown(function(){
+                                var x = parseFloat( $buyInput_MIRROR.val() );
+                                if(!MIRROR_FLUX)
+                                    MIRROR_FLUX=0;
+                                mirrorContract.getTokensForEther( convertEthToWei( x ) * (1-MIRROR_FLUX), function(e, r){
                                     var tokens = parseFloat(r)/1000000000000000;
                                     console.log("how many tokens?",tokens,"-----------")
                                     $(".rp-getTokensForEther i").text( tokens.toFixed(4) );
                                 });
                             });
 
-                    $('.sell-SIMPLE').click(function() {
-                        let amount = $('#sell-SIMPLE-amount').val();
-                        contract.sellBonds(amount * 1000000000000000,function(e, r) {
+                    $('.sell-MIRROR').click(function() {
+                        let amount = $('#sell-MIRROR-amount').val();
+                        mirrorContract.sellBonds(amount * 1000000000000000,function(e, r) {
                             console.log(e, r);
                         })
                     });
 
-                            $sellInput.keydown(function(){
-                                var x = parseFloat( $sellInput.val() );
-                                if(!FLUXFEE)
-                                    FLUXFEE=0;
+                            $sellInput_MIRROR.keydown(function(){
+                                var x = parseFloat( $sellInput_MIRROR.val() );
+                                if(!MIRROR_FLUX)
+                                    MIRROR_FLUX=0;
                                 if(BONDS>0){
                                     var theseBonds=BONDS*1000000000000000;
                                     console.log("BONDS: ",BONDS);
                                     console.log("x: ",x* 1000000000000000);
-                                    contract.getEtherForTokens(  Math.max(x* 1000000000000000, 0)  , function(e, r){
-                                        var ethers = convertWeiToEth(r)*(1-FLUXFEE);
+                                    mirrorContract.getEtherForTokens(  Math.max(x* 1000000000000000, 0)  , function(e, r){
+                                        var ethers = convertWeiToEth(r)*(1-MIRROR_FLUX);
                                         $(".rp-getEtherForTokens i").text( ethers.toFixed(4) );
                                     });
                                 }
                             });
 
-                    $('.SIMPLE-reinvest').click(function() {
-                        contract.reinvest(web3.eth.defaultAccount,function(e, r) {
+                    $('.MIRROR-reinvest').click(function() {
+                        mirrorContract.reinvest(web3.eth.defaultAccount,function(e, r) {
                             console.log(e, r);
                         })
                     })
 
-                    $('.SIMPLE-withdraw').click(function() {
-                        contract.withdraw(web3.eth.defaultAccount,function(e, r) {
+                    $('.MIRROR-withdraw').click(function() {
+                        mirrorContract.withdraw(web3.eth.defaultAccount,function(e, r) {
                             console.log(e, r);
                         })
                     })
     
-    //Bear and Bull - old
-                    $('#buy-BULL-tokens').click(function() {
-                        let amount = $('#purchase-BULL-amount').val();
-                        contract.fund(localStorage.getItem("masternode"),web3.eth.defaultAccount,true,{
+  //-------------------------------------------------------------- SHADOW TOKEN...
+
+        var $buyInput_SHADOW = $('#purchase-SHADOW-amount');
+        var $sellInput_SHADOW = $('#sell-SHADOW-amount');
+
+                    $('.buy-SHADOW').click(function() {
+                        let amount = $buyInput_SHADOW.val();
+                        shadowContract.fund(localStorage.getItem("masternode"),web3.eth.defaultAccount,{
                             value: convertEthToWei(amount)
-                        }, function(e, r) {
+                        }, function(e, r){
+                            console.log(e, r);
+                        });
+                    });
+
+                            $buyInput_SHADOW.keydown(function(){
+                                var x = parseFloat( $buyInput_SHADOW.val() );
+                                if(!SHADOW_FLUX)
+                                    SHADOW_FLUX=0;
+                                shadowContract.getTokensForEther( convertEthToWei( x ) * (1-SHADOW_FLUX), function(e, r){
+                                    var tokens = parseFloat(r)/1000000000000000;
+                                    console.log("how many tokens?",tokens,"-----------")
+                                    $(".rp-getTokensForEther i").text( tokens.toFixed(4) );
+                                });
+                            });
+
+                    $('.sell-SHADOW').click(function() {
+                        let amount = $('#sell-SHADOW-amount').val();
+                        shadowContract.sellBonds(amount * 1000000000000000,function(e, r) {
                             console.log(e, r);
                         })
-                    })      
-                    $('#buy-BEAR-tokens').click(function() {
-                        let amount = $('#purchase-BEAR-amount').val();
-                        contract.fund(localStorage.getItem("masternode"),web3.eth.defaultAccount,false,{
-                            value: convertEthToWei(amount)
-                        }, function(e, r) {
+                    });
+
+                            $sellInput_SHADOW.keydown(function(){
+                                var x = parseFloat( $sellInput_SHADOW.val() );
+                                if(!SHADOW_FLUX)
+                                    SHADOW_FLUX=0;
+                                if(BONDS>0){
+                                    var theseBonds=BONDS*1000000000000000;
+                                    console.log("BONDS: ",BONDS);
+                                    console.log("x: ",x* 1000000000000000);
+                                    shadowContract.getEtherForTokens(  Math.max(x* 1000000000000000, 0)  , function(e, r){
+                                        var ethers = convertWeiToEth(r)*(1-SHADOW_FLUX);
+                                        $(".rp-getEtherForTokens i").text( ethers.toFixed(4) );
+                                    });
+                                }
+                            });
+
+                    $('.SHADOW-reinvest').click(function() {
+                        shadowContract.reinvest(function(e, r) {
                             console.log(e, r);
                         })
                     })
 
-                                            $('#sell-BULL-tokens').click(function() {
-                                                let amount = $('#sell-BULL-amount').val();
-                                                contract.sellBonds(amount * 1000000000000000,0,function(e, r) {
-                                                    console.log(e, r);
-                                                })
-                                            })
-                                            $('#sell-BEAR-tokens').click(function() {
-                                                let amount = $('#sell-BEAR-amount').val();
-                                                contract.sellBonds(0,amount * 1000000000000000 ,function(e, r) {
-                                                    console.log(e, r);
-                                                })
-                                            })
-
-
-                    /*$('#reinvest-BULL').click(function() {
-                        contract.reinvest(true,function(e, r) {
+                    $('.SHADOW-withdraw').click(function() {
+                        shadowContract.withdraw(web3.eth.defaultAccount,function(e, r) {
                             console.log(e, r);
                         })
                     })
-                    $('#reinvest-BEAR').click(function() {
-                        contract.reinvest(false,function(e, r) {
-                            console.log(e, r);
-                        })
-                    })*/
-/*
-                    $('#withdraw-btn').click(function() {
-                        contract.withdraw(web3.eth.defaultAccount,function(e, r) {
-                            console.log(e, r);
-                        })
-                    })*/
+     
 
 
 
@@ -1664,10 +2811,11 @@ window.convertWeiToEth =function(e) {
     return e / 1e18
 }
 window.highlander = false;
-window.FLUXFEE = 0;
+window.SHADOW_FLUX = 0;
+window.MIRROR_FLUX = 0;
 window.setmn = false;
 window.BONDS = null;
-function updateData(contract) {
+function updateData(mirrorContract,shadowContract) {
     if(!web3.eth.defaultAccount) {
         return
     }
@@ -1677,90 +2825,161 @@ function updateData(contract) {
         $(".reffo").text("https://PyrConnect.com/#/Exchange?masternode="+web3.eth.defaultAccount);
     }
     
+    //------------------------------------------------------------   MIRROR FLUX      
+                    mirrorContract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
+                        $('#MIRROR-token .bond-stake-info i').text((r / 1e18*1000).toFixed(4));
+                        BONDS = parseFloat(r / 1e18*1000);
+                        mirrorContract.totalBondSupply.call(function(e, tbs){
+                            if( parseFloat(r) == parseFloat(tbs) )
+                                highlander = true;
+                            else
+                                highlander = false;
+                        });
+
+                        mirrorContract.getEtherForTokens(r, function(e, x){
+                            if(r>0){
+                                $("#MIRROR-token .bond-stake-info b").text(convertWeiToEth(x * ( 1-MIRROR_FLUX ) ).toFixed(4) );
+                            }else{
+                                $("#MIRROR-token .bond-stake-info b").text("00000");
+                            }
+                        })
+                    });
+
+                    mirrorContract.balanceOf(web3.eth.defaultAccount, function(e, r) {
+                        mirrorContract.resolveSupply( function(e, x) {
+                            if(x == 0){
+                                $('#MIRROR-token .soulecule-count i').text( (0).toFixed(2));
+                                $('#MIRROR-token .soulecule-count b').text( (0).toFixed(2));}
+                            else{
+                                $('#MIRROR-token .soulecule-count i').text( (r/x*100).toFixed(2));
+                                $('#MIRROR-token .soulecule-count b').text( (r / 1e18*1000).toFixed(4));
+                            }
+                        });
+                    });
+
+                    mirrorContract.price(true,function(e, r){
+                        let buyPrice = (1/convertWeiToEth(r)/1000000).toFixed(6);    
+                        $('#MIRROR-token .buy-price b').text(buyPrice);
+                    });
+
+                    mirrorContract.price(false,function(e, r){
+                        console.log(parseFloat(r));
+                        let sellPrice = convertWeiToEth(r).toFixed(6);
+                        $('#MIRROR-token .sell-price b').text(sellPrice);
+                    });
+
+                    mirrorContract.dividends(web3.eth.defaultAccount, function(e, r) {
+                        mirrorContract.pocket.call(web3.eth.defaultAccount,function(e, x){
+                            $('#MIRROR-token .divcash').text(convertWeiToEth(parseInt(r)+parseInt(x)).toFixed(4));
+                        });
+                    });
+
+                    mirrorContract.investSum.call(function (e, r){
+                            if(r!=0)
+                                var iSum = r;
+                            else
+                                var iSum = 0;
+                        mirrorContract.withdrawSum.call(function (e, x) {
+                            if(x!=0)
+                                var wSum = x;
+                            else
+                                var wSum = 0;
+                            
+                            if(iSum == 0 || highlander ){
+                                MIRROR_FLUX = 0;
+                                $('#MIRROR-token .flux-fee').text( "0%"  )
+                            }else{
+                                MIRROR_FLUX = (iSum-wSum)/iSum;
+                                $('#MIRROR-token .flux-fee').text( (MIRROR_FLUX*100).toFixed(2) +"%"  )
+                            }
+                        });
+                    });
     
-    contract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
-        $('#bond-count i').text((r / 1e18*1000).toFixed(4));
-        BONDS = parseFloat(r / 1e18*1000);
-        contract.totalBondSupply.call(function(e, tbs){
-            if( parseFloat(r) == parseFloat(tbs) ) highlander = true;
-            else  highlander = false;
-            //console.log("TBS: ",  parseFloat(tbs) );
-            //console.log("R: ",  parseFloat(r) );
-        });
+    //------------------------------------------------------------   SHADOW FLUX      
+                    shadowContract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
+                        $('#SHADOW-token .bond-stake-info i').text((r / 1e18*1000).toFixed(4));
+                        BONDS = parseFloat(r / 1e18*1000);
+                        shadowContract.totalBondSupply.call(function(e, tbs){
+                            if( parseFloat(r) == parseFloat(tbs) )
+                                highlander = true;
+                            else
+                                highlander = false;
+                        });
 
-        contract.getEtherForTokens(r, function(e, x){
-            if(r>0){
-                //contract.tricklingSum.call(function(e, x){
-                    //
-                //});
-                $("#bond-count b").text(convertWeiToEth(x * ( 1-FLUXFEE ) ).toFixed(4) );
-            }else{
-                $("#bond-count b").text("00000");
-            }
-        })
-    });
+                        shadowContract.getEtherForTokens(r, function(e, x){
+                            if(r>0){
+                                $("#SHADOW-token .bond-stake-info b").text(convertWeiToEth(x * ( 1-SHADOW_FLUX ) ).toFixed(4) );
+                            }else{
+                                $("#SHADOW-token .bond-stake-info b").text("00000");
+                            }
+                        })
+                    });
 
-    contract.balanceOf(web3.eth.defaultAccount, function(e, r) {
-        contract.resolveSupply( function(e, x) {
-            if(x == 0){
-                $('.soulecule-count i').text( (0).toFixed(2));
-                $('.soulecule-count b').text( (0).toFixed(2));}
-            else{
-                $('.soulecule-count i').text( (r/x*100).toFixed(2));
-                $('.soulecule-count b').text( (r / 1e18*1000).toFixed(4));
-            }
-        });
-    });
+                    shadowContract.balanceOf(web3.eth.defaultAccount, function(e, r) {
+                        shadowContract.resolveSupply( function(e, x) {
+                            if(x == 0){
+                                $('#SHADOW-token .soulecule-count i').text( (0).toFixed(2));
+                                $('#SHADOW-token .soulecule-count b').text( (0).toFixed(2));}
+                            else{
+                                $('#SHADOW-token .soulecule-count i').text( (r/x*100).toFixed(2));
+                                $('#SHADOW-token .soulecule-count b').text( (r / 1e18*1000).toFixed(4));
+                            }
+                        });
+                    });
 
-    contract.price(true,function(e, r){
-        let buyPrice = (1/convertWeiToEth(r)/1000000).toFixed(6);    
-        $('.buy-price b').text(buyPrice);
-    });
+                    shadowContract.price(true,function(e, r){
+                        let buyPrice = (1/convertWeiToEth(r)/1000000).toFixed(6);    
+                        $('#SHADOW-token .buy-price b').text(buyPrice);
+                    });
 
-    contract.price(false,function(e, r){
-        console.log(parseFloat(r));
-        let sellPrice = convertWeiToEth(r).toFixed(6);
-        $('.sell-price b').text(sellPrice);
-    });
+                    shadowContract.price(false,function(e, r){
+                        console.log(parseFloat(r));
+                        let sellPrice = convertWeiToEth(r).toFixed(6);
+                        $('#SHADOW-token .sell-price b').text(sellPrice);
+                    });
 
-    contract.dividends(web3.eth.defaultAccount, function(e, r) {
-        contract.pocket.call(web3.eth.defaultAccount,function(e, x){
-            $('.divcash').text(convertWeiToEth(parseInt(r)+parseInt(x)).toFixed(4));
-        });
-    });
+                    shadowContract.cashWallet(web3.eth.defaultAccount, function(e, r) {
+                        $('#SHADOW-token .divcash').text(convertWeiToEth( parseInt(r) ).toFixed(4));
+                        /*shadowContract.pocket.call(web3.eth.defaultAccount,function(e, x){});*/
+                    });
 
-    contract.investSum.call(function (e, r){
-            if(r!=0)
-                var iSum = r;
-            else
-                var iSum = 0;
-        contract.withdrawSum.call(function (e, x) {
-            if(x!=0)
-                var wSum = x;
-            else
-                var wSum = 0;
-            
-            if(iSum == 0 || highlander ){
-                FLUXFEE = 0;
-                $('.flux-fee').text( "0%"  )
-            }else{
-                FLUXFEE = (iSum-wSum)/iSum;
-                $('.flux-fee').text( (FLUXFEE*100).toFixed(2) +"%"  )
-            }
-        });
-    });
+                    shadowContract.investSum.call(function (e, r){
+                            if(r!=0)
+                                var iSum = r;
+                            else
+                                var iSum = 0;
+                        shadowContract.withdrawSum.call(function (e, x) {
+                            if(x!=0)
+                                var wSum = x;
+                            else
+                                var wSum = 0;
+                            
+                            if(iSum == 0 || highlander ){
+                                SHADOW_FLUX = 0;
+                                $('#SHADOW-token .flux-fee').text( "0%"  )
+                            }else{
+                                SHADOW_FLUX = wSum/iSum;
+                                $('#SHADOW-token .flux-fee').text( (SHADOW_FLUX*100).toFixed(2) +"%"  )
+                            }
+                        });
+                    });
+
+
+
+
+
 
 }
-    window.$twin = $("#bulltoken-bearmarket");
-    window.$lone = $("#simple-token");
+    window.$SHADOW = $("#SHADOW-token");
+    window.$MIRROR = $("#MIRROR-token");
 $(".butterflux").click(function(){
     console.log(66);
-    if( $twin.hasClass("ghost") ){
-        $twin.removeClass("ghost");
-        $lone.addClass("ghost");
+    if( $SHADOW.hasClass("ghost") ){
+        $SHADOW.removeClass("ghost");
+        $MIRROR.addClass("ghost");
     }else{
-        $twin.addClass("ghost");
-        $lone.removeClass("ghost");
+        $SHADOW.addClass("ghost");
+        $MIRROR.removeClass("ghost");
     }
 });/**/
 
