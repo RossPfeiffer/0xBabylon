@@ -2700,7 +2700,7 @@ let OG_abi = [
                                 var x = parseFloat( $buyInput_MIRROR.val() );
                                 if(!MIRROR_FLUX)
                                     MIRROR_FLUX=0;
-                                if(MIRROR_BONDS>0){
+                                if(MIRROR_BONDS>0 && x>0){
                                     mirrorContract.getTokensForEther( convertEthToWei( x ) * (1-MIRROR_FLUX), function(e, r){
                                         var tokens = parseFloat(r)/1000000000000000;
                                         console.log("how many tokens?",tokens,"-----------")
@@ -2720,7 +2720,7 @@ let OG_abi = [
                                 var x = parseFloat( $sellInput_MIRROR.val() );
                                 if(!MIRROR_FLUX)
                                     MIRROR_FLUX=0;
-                                if(MIRROR_BONDS>0){
+                                if(MIRROR_BONDS>0 && x>0){
                                     var theseBonds=MIRROR_BONDS*1000000000000000;
                                     console.log("MIRROR_BONDS: ",MIRROR_BONDS);
                                     console.log("x: ",x* 1000000000000000);
