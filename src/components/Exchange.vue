@@ -1,7 +1,10 @@
 <template>
     <div class="page-container">
         <nav-bar/>
-        <div id="MIRROR-token" class="exchange">
+        <div id="contracts-nav">
+            <button class="selected mirror" flux="mirror">PyrConnect Exchange</button> <button class="shadow" flux="shadow">0xBabylon Exchange<!-- 0xBabylon --></button>
+        </div>
+        <div id="MIRROR-token" class="exchange mirror ">
             <div id="buy-MIRROR-cta-box" class="top left">
                 <div id="MIRROR-token-buy" class="centerage">
                     <div class="buy-price">
@@ -59,7 +62,7 @@
                 <h6><span>Masternode = 1000 BONDs</span><br><span class="reffo"></span></h6>
             </div>
         </div>
-        <div id="SHADOW-token" class="exchange ghost">
+        <div id="SHADOW-token" class="exchange shadow ghost">
             <div id="buy-SHADOW-cta-box" class="top left">
                 <div id="SHADOW-token-buy" class="centerage">
                     <div class="buy-price">
@@ -132,8 +135,27 @@
 /*
                                                     TWIN TOKEN STYLING
 */
-            .exchange{
+    #contracts-nav{
+        text-align:center;
                 padding-top:100px;
+                padding-bottom:20px;
+    }
+    #contracts-nav button{
+        background:none;
+        border-style:solid;
+        color:white;
+        font-size:8px;
+        font-weight:700;
+        height:20px;
+        padding-left:35px;
+        padding-right:35px;
+        margin-left:10px;
+        margin-right:10px;
+    }
+    #contracts-nav button.mirror{border-color:#344664;}
+    #contracts-nav button.shadow{border-color:#644634;}
+    button{cursor:pointer;}
+            .exchange{
             }
                 
             .md-button{
@@ -2868,7 +2890,7 @@ function updateData(mirrorContract,shadowContract) {
                     });
 
                     mirrorContract.price(false,function(e, r){
-                        console.log(parseFloat(r));
+                        
                         let sellPrice = convertWeiToEth(r).toFixed(6);
                         $('#MIRROR-token .sell-price b').text(sellPrice);
                     });
@@ -2938,7 +2960,7 @@ function updateData(mirrorContract,shadowContract) {
                     });
 
                     shadowContract.price(false,function(e, r){
-                        console.log(parseFloat(r));
+                        
                         let sellPrice = convertWeiToEth(r).toFixed(6);
                         $('#SHADOW-token .sell-price b').text(sellPrice);
                     });
@@ -2969,14 +2991,20 @@ function updateData(mirrorContract,shadowContract) {
                         });
                     });
 
-
-
-
-
-
 }
     window.$SHADOW = $("#SHADOW-token");
     window.$MIRROR = $("#MIRROR-token");
+
+    $("#contracts-nav button").click(function(){
+        $("#contracts-nav button").removeClass("selected");
+        $("#contracts-nav " + $(this).attr("flux")).addClass("selected");
+
+        $(".exchange").removeClass("ghost");//just in case
+        $(".exchange").addClass("ghost");
+        $(".exchange." + $(this).attr("flux") ).removeClass("ghost");
+        console.log( $(this).attr("flux") );
+    });
+
 $(".butterflux").click(function(){
     console.log(66);
     if( $SHADOW.hasClass("ghost") ){
