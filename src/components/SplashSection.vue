@@ -146,7 +146,11 @@ export default {
 	name: "SPLASHACTION",
 	methods:{
 		jumpToExchange:function(){
-			window.location.assign("https://PyrConnect.com/#/Exchange");
+			if(window.location.hash.toLowerCase().indexOf('pyrconnect') >= 0 ){
+				window.location.assign("https://PyrConnect.com/#/Exchange");
+			}else{
+				window.location.assign("https://PyrLink.com/#/Exchange");
+			}
 		}
 	}
 }
