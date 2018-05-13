@@ -5,7 +5,7 @@
             <button class="selected mirror" flux="mirror">PyrConnect Exchange</button> <button class="shadow" flux="shadow">0xBabylon Exchange<!-- 0xBabylon --></button>
         </div>
         <div id="MIRROR-token" class="exchange mirror ">
-            <div id="buy-MIRROR-cta-box" class="top left">
+            <div id="buy-MIRROR-cta-box" class="top left action-pair">
                 <div id="MIRROR-token-buy" class="centerage">
                     <div class="buy-price">
                         <h3>Buy Price</h3>
@@ -15,18 +15,18 @@
                         <input type="number" id="purchase-MIRROR-amount" class="form-control" placeholder="ETH to convert (e.g. 0.12)">
                     </div>
                     <div class="buy-action">
-                        <md-button id="buy-MIRROR-tokens" class="cta buy-MIRROR">Buy BONDs</md-button>
+                        <md-button id="buy-MIRROR-tokens" class="cta buy-MIRROR">Buy <i>BONDs</i></md-button>
                         <div class="return-predictor rp-getTokensForEther">Est. Tokens for ETH:<br><i>0</i></div>
                     </div>
                </div>
             </div>
-            <div id="lone-buy-box" class="top center centerage">
+            <div id="lone-buy-box" class="top center centerage mobile-head">
                 <div class="bond-stake-info centerage">
                     <h1>Mirror Flux</h1>
                     <h3 id="bond-count">BONDs<br><i>00.00</i><br>ETH: <b></b></h3>
                 </div>
             </div>
-            <div id="sell-MIRROR-cta-box" class="top right">
+            <div id="sell-MIRROR-cta-box" class="top right action-pair">
                 <div id="MIRROR-token-sell" class="centerage">
                     <div class="sell-price">
                         <h3>Sell Price</h3>
@@ -36,34 +36,30 @@
                         <input type="number" id="sell-MIRROR-amount" class="form-control" placeholder="Tokens to sell (e.g. 12)">
                     </div>
                     <div class="buy-action">
-                        <md-button id="sell-MIRROR-tokens" class="cta sell-MIRROR">Sell BONDs</md-button> 
+                        <md-button id="sell-MIRROR-tokens" class="cta sell-MIRROR">Sell <i>BONDs</i></md-button> 
                         <div class="return-predictor rp-getEtherForTokens">Est. ETH for Token:<br><i>0</i></div>
                     </div>
                </div>
             </div>
-            <div class="middle left twin bond-stake-stats">
-            </div>
             <div id="MIRROR-butterfly" class="butterfly lone">
                 <md-button id="MIRROR-reinvest" class="cta MIRROR-reinvest reinvest-btn wing">Reinvest</md-button>
                 <div class="actions">
-                    <h6 class="soulecule-count">Resolve Ratio <i>0</i>%<br><b></b></h6>
-                    <div class="butterflux"><img src="../assets/butterfly.png"></div>
                     <h4>Dividends: <b class="divcash">0000</b> ETH </h4>
                 </div>
                 <md-button id="withdraw-btn" class="cta MIRROR-withdraw wing" style="color:white;">Withdraw</md-button>
             </div>
-            <div class="middle right twin bond-stake-stats">
-            </div>
-            <div class="bottom center centerage">
+            <div class="fluxfee-box bottom center centerage">
+                <div class="butterflux"><img src="../assets/butterfly.png"></div>
                 <h3>Flux Fee</h3>
                 <h6><b class="flux-fee">0.00</b></h6>
             </div>
-            <div id="masternode" class="bottom center centerage">
+            <div class="masternode bottom center centerage">
                 <h6><span>Masternode = 1000 BONDs</span><br><span class="reffo"></span></h6>
+                <!--<h6 class="soulecule-count">Resolve Ratio <i>0</i>%<br><b></b></h6>-->
             </div>
         </div>
         <div id="SHADOW-token" class="exchange shadow ghost">
-            <div id="buy-SHADOW-cta-box" class="top left">
+            <div id="buy-SHADOW-cta-box" class="top left action-pair">
                 <div id="SHADOW-token-buy" class="centerage">
                     <div class="buy-price">
                         <h3>Buy Price</h3>
@@ -73,18 +69,18 @@
                         <input type="number" id="purchase-SHADOW-amount" class="form-control" placeholder="ETH to convert (e.g. 0.12)">
                     </div>
                     <div class="buy-action">
-                        <md-button id="buy-SHADOW-tokens" class="cta buy-SHADOW">Buy BONDs</md-button>
+                        <md-button id="buy-SHADOW-tokens" class="cta buy-SHADOW">Buy <i>BONDs</i></md-button>
                         <div class="return-predictor rp-getTokensForEther">Est. Tokens for ETH:<br><i>0</i></div>
                     </div>
                </div>
             </div>
-            <div id="lone-buy-box" class="top center centerage">
+            <div id="lone-buy-box" class="top center centerage mobile-head">
                 <div class="bond-stake-info centerage">
                     <h1>Shadow Flux</h1>
                     <h3 id="bond-count">BONDs<br><i>00.00</i><br>ETH: <b></b></h3>
                 </div>
             </div>
-            <div id="sell-SHADOW-cta-box" class="top right">
+            <div id="sell-SHADOW-cta-box" class="top right action-pair">
                 <div id="SHADOW-token-sell" class="centerage">
                     <div class="sell-price">
                         <h3>Sell Price</h3>
@@ -94,30 +90,26 @@
                         <input type="number" id="sell-SHADOW-amount" class="form-control" placeholder="Tokens to sell (e.g. 12)">
                     </div>
                     <div class="buy-action">
-                        <md-button id="sell-SHADOW-tokens" class="cta sell-SHADOW">Sell BONDs</md-button> 
+                        <md-button id="sell-SHADOW-tokens" class="cta sell-SHADOW">Sell <i>BONDs</i></md-button> 
                         <div class="return-predictor rp-getEtherForTokens">Est. ETH for Token:<br><i>0</i></div>
                     </div>
                </div>
             </div>
-            <div class="middle left twin bond-stake-stats">
-            </div>
             <div id="SHADOW-butterfly" class="butterfly lone">
                 <md-button id="SHADOW-reinvest" class="cta SHADOW-reinvest reinvest-btn wing">Reinvest</md-button>
                 <div class="actions">
-                    <h6 class="soulecule-count">Resolve Ratio <i>0</i>%<br><b></b></h6>
-                    <div class="butterflux"><img src="../assets/butterfly.png"></div>
                     <h4>Dividends: <b class="divcash">0000</b> ETH </h4>
                 </div>
                 <md-button id="withdraw-btn" class="cta SHADOW-withdraw wing" style="color:white;">Withdraw</md-button>
             </div>
-            <div class="middle right twin bond-stake-stats">
-            </div>
-            <div class="bottom center centerage">
+            <div class="fluxfee-box bottom center centerage">
+                <div class="butterflux"><img src="../assets/butterfly.png"></div>
                 <h3>Flux Fee</h3>
                 <h6><b class="flux-fee">0.00</b></h6>
             </div>
-            <div id="masternode" class="bottom center centerage">
+            <div class="masternode bottom center centerage">
                 <h6><span>Masternode = 1000 BONDs</span><br><span class="reffo"></span></h6>
+                <!--<h6 class="soulecule-count">Resolve Ratio <i>0</i>%<br><b></b></h6>-->
             </div>
         </div>
         <footer-section/>
@@ -137,7 +129,7 @@
 */
     #contracts-nav{
         text-align:center;
-                padding-top:100px;
+                padding-top:70px;
                 padding-bottom:20px;
     }
     #contracts-nav button{
@@ -155,8 +147,7 @@
     #contracts-nav button.mirror{border-color:#344664;}
     #contracts-nav button.shadow{border-color:#644634;}
     button{cursor:pointer;}
-            .exchange{
-            }
+            
                 
             .md-button{
                 border-style:solid;
@@ -173,9 +164,6 @@
                 color:white;
             }
 
-
-
-
 /* New Less Hacky*/
     #bulltoken-bearmarket.exchange{
         padding-top:64px;
@@ -188,7 +176,7 @@
     }
     .exchange{
         display:grid;
-        height:100vh;
+        height:calc(100vh );
         grid-template-columns: auto auto auto auto auto auto auto auto auto;
         grid-template-rows: auto auto auto;
         width:100%;
@@ -203,7 +191,8 @@
     .exchange .right{grid-column-start:7 ;grid-column-end:10;}
         .exchange .middle.right{grid-column-start:8 ;grid-column-end:10;}
     .exchange .butterfly{grid-row:2;grid-column-start:3 ;grid-column-end:8;}
-    #masternode h6{width:100%;position:absolute;bottom:0;left:0;}
+    .masternode.centerage{ position: relative;}
+    .masternode h6{width:100%;position:absolute;bottom:0;left:0;}
     .butterfly{
         text-align:center;
     }
@@ -393,6 +382,65 @@
                 width:175px;
                 height:45px;
             }
+
+
+
+/*for mobile*/
+@media only screen and (max-width: 750px) {
+    .exchange{
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto auto auto;
+    }
+    .mobile-head.center{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .exchange .action-pair{
+        border-width:1px;
+        border-style:solid;
+    }
+    #MIRROR-token .action-pair{
+        border-color:#344664;
+    }
+    #SHADOW-token .action-pair{
+        border-color:#644634;
+    }
+    .action-pair.left{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row:2;
+    }
+
+    .action-pair.right{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row:2;
+    }
+    .lone.butterfly{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row:3;
+        /*height:150px;*/
+    }
+    .lone > .actions{
+        float: left;
+        width: 100%;
+    }
+    
+    .fluxfee-box.centerage{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row:4 !important;              
+    }    
+    .masternode.bottom.centerage{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row:5;       
+        position: relative;
+    }
+    .masternode.centerage h6{position:relative;}
+
+}
 </style>
 
 <script>
@@ -2994,19 +3042,22 @@ function updateData(mirrorContract,shadowContract) {
 }
     window.$SHADOW = $("#SHADOW-token");
     window.$MIRROR = $("#MIRROR-token");
-
-    $("#contracts-nav button").click(function(){
+    function fluxit(fluxxr){
+        //var fluxxr  = $(this).attr("flux");
         $("#contracts-nav button").removeClass("selected");
-        $("#contracts-nav " + $(this).attr("flux")).addClass("selected");
+        $("#contracts-nav " + fluxxr ).addClass("selected");
 
         $(".exchange").removeClass("ghost");//just in case
         $(".exchange").addClass("ghost");
-        $(".exchange." + $(this).attr("flux") ).removeClass("ghost");
-        console.log( $(this).attr("flux") );
+        $(".exchange." + fluxxr ).removeClass("ghost");
+        console.log(  fluxxr  );
+    }
+
+    $("#contracts-nav button").click(function(){
+        fluxit( $(this).attr("flux") );
     });
 
-$(".butterflux").click(function(){
-    console.log(66);
+$(".butterflux").click(function(){  
     if( $SHADOW.hasClass("ghost") ){
         $SHADOW.removeClass("ghost");
         $MIRROR.addClass("ghost");
