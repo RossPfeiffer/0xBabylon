@@ -147,9 +147,9 @@ export default {
 	methods:{
 		jumpToExchange:function(){
 			if(window.location.hash.toLowerCase().indexOf('pyrconnect') >= 0 ){
-				window.location.assign("https://PyrConnect.com/#/Exchange");
+				window.location.assign("https://pyrlink.com/#/Exchange");
 			}else{
-				window.location.assign("https://PyrLink.com/#/Exchange");
+				window.location.assign("https://pyrconnect.com/#/Exchange");
 			}
 		}
 	}
