@@ -148,12 +148,12 @@ export default {
 		jumpToExchange:function(){
 			var fff = window.location.href.toLowerCase().indexOf('pyrconnect');
 			if( fff>= 0 ){
-				//window.location.assign("https://pyrlink.com/#/Exchange");
+				window.location.assign("https://pyrlink.com/#/Exchange");
 				console.log('jump to pyrlink...')
 				console.log(fff);
 				console.log(window.location.href);
 			}else{
-				//window.location.assign("https://pyrconnect.com/#/Exchange");
+				window.location.assign("https://pyrconnect.com/#/Exchange");
 				console.log('jump to pyrconnect...')
 				console.log(fff);
 				console.log(window.location.href);
