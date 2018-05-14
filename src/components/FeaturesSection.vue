@@ -3,8 +3,8 @@
 		<div id="features-container" class="content-column">
 			<div id="feature-pyrmining" class="feature">
 				<div class="feature-image"></div>
-				<h2>PoWH as an ICO</h2>
-				<p>You get additional ERC20 Tokens with your ETH when you sell your Bonds. These are licensing tokens.</p>
+				<h2>Virtual Deposit Rewards</h2>
+				<p>You get additional ERC20 Tokens with your ETH when you sell your Bonds. This is for participating in project developments.</p>
 			</div>
 			<div id="feature-soulecules" class="feature">
 				<div class="feature-image"></div>
@@ -13,8 +13,8 @@
 			</div>
 			<div id="feature-helixparticle" class="feature">
 				<div class="feature-image"></div>
-				<h2>Trickling Referrals</h2>
-				<p>It just trickles up, and up, and up, and up, and up, and up, and up, and up, and up, and up, and up.</p>
+				<h2>Masternode Downline</h2>
+				<p>Every masternode has a continuous downline. That means your affiliate's affiliates trickle up to you.</p>
 			</div>
 		</div>
 	</section>

@@ -4,7 +4,7 @@
 			<div class="cosmic-belt-bg"></div>		
 			<div class="content-column">
 				<nav id="logo-holder">
-				<h2 class="md-title"><img id="lugo" src="../assets/butterfly.png">PyrConnect</h2></nav>
+				<h2 class="md-title"><img id="lugo" src="../assets/butterfly.png">0xBabylon</h2></nav>
 				<nav id="more-nav">
 					
 					<a href="/"><md-button >Home</md-button></a>

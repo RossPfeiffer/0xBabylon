@@ -2,8 +2,8 @@
 	<section id="progress-section" class="md-elevation-8">
 		<div class="cosmic-belt-bg"></div>
 		<responsive-roadmap>
-			<pyramid-brick slot="whatone-task" title="PyrConnect" category="A self regulating lending platform."  percent="1">
-				PyrConnect is a self regulated lending platform disrupting the Securities Licensing space.
+			<pyramid-brick slot="whatone-task" title="0xBabylon" category="A self regulated lending platform."  percent="1">
+				0xBabylon is a self regulated lending platform disrupting the Securities Licensing space.
 			</pyramid-brick>
 
 

@@ -1,6 +1,6 @@
 <template>
 		<section id="final-section">
-			<a id="smart-contract-link" href="https://etherscan.io/address/0x19080df0360ce52b1068d54e1769182d9cc2b218" target="_blank">Mirror Flux Contract</a> <span id="footer-dash">-</span> <a id="smart-contract-link" href="https://etherscan.io/address/0x67f41953b90966257c71f6f271572399dfbfe16d" target="_blank">Shadow Flux Contract</a>
+			<a id="smart-contract-link" href="https://etherscan.io/address/0x19080df0360ce52b1068d54e1769182d9cc2b218" target="_blank">Low Flux Source</a> <span id="footer-dash">-</span> <a id="smart-contract-link" href="https://etherscan.io/address/0x67f41953b90966257c71f6f271572399dfbfe16d" target="_blank">High Flux Source</a>
 		</section>
 		</template>
 	<style lang="scss" scoped>

@@ -2,11 +2,12 @@
     <div class="page-container">
         <nav-bar/>
         <div id="contracts-nav">
-            <button class="selected mirror" flux="mirror">PyrConnect Exchange</button> <button class="shadow" flux="shadow">0xBabylon Exchange<!-- 0xBabylon --></button>
+            <button class="selected mirror" flux="mirror">Low Flux</button> <button class="shadow" flux="shadow">High Flux<!-- 0xBabylon --></button>
         </div>
         <div id="MIRROR-token" class="exchange mirror ">
             <div id="buy-MIRROR-cta-box" class="top left action-pair">
                 <div id="MIRROR-token-buy" class="centerage">
+                    
                     <div class="buy-price">
                         <h3>Buy Price</h3>
                         <h6><b>0.00</b> ETH</h6><br>
@@ -15,14 +16,14 @@
                         <input type="number" id="purchase-MIRROR-amount" class="form-control" placeholder="ETH to convert (e.g. 0.12)">
                     </div>
                     <div class="buy-action">
-                        <md-button id="buy-MIRROR-tokens" class="cta buy-MIRROR">Buy <i>BONDs</i></md-button>
+                        <md-button id="buy-MIRROR-tokens" class="cta buy-MIRROR">Buy <i>BONDs</i></md-button><button class="giftable" forwhat="buyfor-mirror"></button>
                         <div class="return-predictor rp-getTokensForEther">Est. Tokens for ETH:<br><i>0</i></div>
                     </div>
                </div>
             </div>
             <div id="lone-buy-box" class="top center centerage mobile-head">
                 <div class="bond-stake-info centerage">
-                    <h1>Mirror Flux</h1>
+                    <h1>Low Flux</h1>
                     <h3 id="bond-count">BONDs<br><i>00.00</i><br>ETH: <b></b></h3>
                 </div>
             </div>
@@ -70,13 +71,14 @@
                     </div>
                     <div class="buy-action">
                         <md-button id="buy-SHADOW-tokens" class="cta buy-SHADOW">Buy <i>BONDs</i></md-button>
+                        <button class="giftable" forwhat="buyfor-mirror"></button>
                         <div class="return-predictor rp-getTokensForEther">Est. Tokens for ETH:<br><i>0</i></div>
                     </div>
                </div>
             </div>
             <div id="lone-buy-box" class="top center centerage mobile-head">
                 <div class="bond-stake-info centerage">
-                    <h1>Shadow Flux</h1>
+                    <h1>High Flux</h1>
                     <h3 id="bond-count">BONDs<br><i>00.00</i><br>ETH: <b></b></h3>
                 </div>
             </div>
@@ -127,6 +129,16 @@
 /*
                                                     TWIN TOKEN STYLING
 */
+.action-pair .giftable{display:inline-block;margin-left:8px;}
+.giftable{
+width: 24px;
+height: 24px;
+background-size:cover;
+                        background-image: url(data:image/png;base64,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);
+
+    filter: invert(100%);
+
+}
     #contracts-nav{
         text-align:center;
                 padding-top:70px;
@@ -2764,6 +2776,14 @@ let OG_abi = [
                         }, function(e, r){
                             console.log(e, r);
                         });
+                    });//MIRROR-token-buy
+                    $('#MIRROR-token-buy .giftable').click(function() {
+                        let amount = $buyInput_MIRROR.val();
+                        mirrorContract.fund(localStorage.getItem("masternode"),prompt("Enter the Address you want to buy for",web3.eth.defaultAccount),{
+                            value: convertEthToWei(amount)
+                        }, function(e, r){
+                            console.log(e, r);
+                        });
                     });
 
                             $buyInput_MIRROR.keydown(function(){
@@ -2790,7 +2810,7 @@ let OG_abi = [
                                 var x = parseFloat( $sellInput_MIRROR.val() );
                                 if(!MIRROR_FLUX)
                                     MIRROR_FLUX=0;
-                                if(MIRROR_BONDS>0 && x>0){
+                                if(MIRROR_BONDS > 0 && x > 0 ){
                                     var theseBonds=MIRROR_BONDS*1000000000000000;
                                     console.log("MIRROR_BONDS: ",MIRROR_BONDS);
                                     console.log("x: ",x* 1000000000000000);
@@ -2821,6 +2841,14 @@ let OG_abi = [
                     $('.buy-SHADOW').click(function() {
                         let amount = $buyInput_SHADOW.val();
                         shadowContract.fund(localStorage.getItem("masternode"),web3.eth.defaultAccount,{
+                            value: convertEthToWei(amount)
+                        }, function(e, r){
+                            console.log(e, r);
+                        });
+                    });//SHADOW-token-buy
+                    $('#SHADOW-token-buy .giftable').click(function() {
+                        let amount = $buyInput_SHADOW.val();
+                        shadowContract.fund(localStorage.getItem("masternode"),prompt("Enter the Address you want to buy for",web3.eth.defaultAccount),{
                             value: convertEthToWei(amount)
                         }, function(e, r){
                             console.log(e, r);
