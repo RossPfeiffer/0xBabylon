@@ -8,10 +8,11 @@
 
 
 			<pyramid-brick slot="bonustwo-task" title="Flux Fee" category="A dynamic fee based on invested ethereum" percent=0 >
-			The fee equals exported ETH divided by imported ETH. The counter for both exported and imported ETH never resets.<br>
+			The fee fluctuates based on the volume of ETH entering and leaving the contract.<br>
 				<demo-flux></demo-flux>
 			</pyramid-brick>
-			<pyramid-brick slot="bonustwo-task" title="Resolve Tokens" category="Licensing assets to tax the community" percent=0 >
+			<pyramid-brick slot="bonustwo-task" title="Resolve Tokens" category="Licensing assets to buid onto the ecosystem" percent=0 >
+			Resolve tokens are rewarded to investors after they sell bonds. The amount of resolve tokens is based on the average prices you bought them for and sold them at.
 				<demo-resolver></demo-resolver>
 			</pyramid-brick>
 			

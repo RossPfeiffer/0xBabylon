@@ -1,7 +1,8 @@
 <template>	
 	<div class="calc-input">
 		<span class="calc-label">{{label}}</span>
-		<input type="number" class="demo-calc-input" v-bind:placeholder="placeholder" v-model="equationNumber"/>
+		<input type="number" class="demo-calc-input" v-bind:placeholder="placeholder"
+		@input="$emit('update:eqNum', $event.target.value)" :value="eqNum" />
 	</div>
 </template>
 
@@ -20,7 +21,8 @@ export default {
 	}),
 	props:{	
 		label: String,
-		placeholder: String
+		placeholder: String,
+		eqNum:{type:Number,default:4}
 	}
 }
 </script>

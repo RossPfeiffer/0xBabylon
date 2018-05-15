@@ -1,12 +1,12 @@
 <template>	
 	<div id="demo-flux" class="demo-calc">
 		<div class="mathblock-division">
-			<demo-calc-input label="Total Withdrawn ETH" placeholder="ETH gone" v-bind:equationNumber="this.demoVariableA" ></demo-calc-input>
+			<demo-calc-input label="ETH in Contract" placeholder="Contract ETH" v-bind:eqNum.sync="demoVariableA" ></demo-calc-input>
 			<hr/>
-			<demo-calc-input label="Total Invested ETH" placeholder="ETH in" v-bind:equationNumber="this.demoVariableB"></demo-calc-input>
+			<demo-calc-input label="Total Invested ETH" placeholder="Imported ETH" v-bind:eqNum.sync="demoVariableB"></demo-calc-input>
 		</div>
 		<div class="eq-part"><div class="big-operator">=</div></div>
-		<div class="eq-part">{{demoFinalValue}}%</div>
+		<div class="eq-part">{{demoVariableA/demoVariableB*100}}%</div>
 	</div>
 </template>
 
@@ -20,24 +20,10 @@
 <script>
 export default {
 	name: 'DemoFlux',
+	
 	data: () => ({
 		demoVariableA: 3,
-		demoVariableB: 4,
-		demoFinalValue: 0
-	}),
-	watch:{
-		demoVariableA: function(){
-			console.log(this.demoVariableA,"....");
-			this.demoFinalValue  =  (this.demoVariableA / this.demoVariableB)*100+"";
-		},
-		demoVariableB: function(){
-			this.demoFinalValue  =  (this.demoVariableA / this.demoVariableB)*100+"";
-		}
-	}/*
-	computed:{
-		demoFinalValue: function(){
-			return  (this.demoVariableA / this.demoVariableB)+"";
-		}
-	}*/
+		demoVariableB: 4
+	})
 }
 </script>
