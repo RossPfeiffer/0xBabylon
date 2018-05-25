@@ -2,8 +2,8 @@
 	<section id="progress-section" class="md-elevation-8">
 		<div class="cosmic-belt-bg"></div>
 		<responsive-roadmap>
-			<pyramid-brick slot="whatone-task" title="0xBabylon" category="A self regulated lending platform."  percent="1">
-				0xBabylon is a self regulated lending platform disrupting the Securities Licensing space.
+			<pyramid-brick slot="whatone-task" title="0xBabylon" category="A FinTech movement empowering creators 1on1"  percent="1">
+				Babylon is a FinTech ecosystem designed perfectly for empowering individual creators. It accomplishes this through a funding model that incentavizes constant communication between new leaders and consumers.
 			</pyramid-brick>
 
 
@@ -11,21 +11,26 @@
 			The fee fluctuates based on the volume of ETH entering and leaving the contract.<br>
 				<demo-flux></demo-flux>
 			</pyramid-brick>
-			<pyramid-brick slot="bonustwo-task" title="Resolve Tokens" category="Licensing assets to buid onto the ecosystem" percent=0 >
+			<pyramid-brick slot="bonustwo-task" title="Resolve Tokens" category="Licensing assets to build onto the ecosystem" percent=0 >
 			Resolve tokens are rewarded to investors after they sell bonds. The amount of resolve tokens is based on the average prices you bought them for and sold them at.
 				<demo-resolver></demo-resolver>
 			</pyramid-brick>
 			
 
 
-			<pyramid-brick slot="criticalthree-task" title="Culture Brands" category="Deploy Multi-Level Loyalty Marketing campaign" percent="0" >
-				Provide creatives in the community with tools and training to sell goods that are backed and branded on grassroots cultures.
+			<pyramid-brick slot="criticalthree-task" title="Test Economies" category="Virtual simulations to test the FinTech Hypothesis" percent="0" >
+				There are currently 3 ideas for projects that will test the utility of the resolve token.
+				<ul>
+					<li>Social Media Advertising</li>
+					<li>Small Business Stock Market</li>
+					<li>MMO Gaming</li>
+				</ul>
 			</pyramid-brick>
 			<pyramid-brick slot="criticalthree-task" title="EcoSystem Contract" category="Development of the ecosystem smart contract" percent="0" >
 				This is the core product of this project. A contract that allows members of a community to come together and govern themselves through a system of highly connected and meaningfully anchored contracts.
 			</pyramid-brick>
 			<pyramid-brick slot="criticalthree-task" title="Glocalize" category="A Global Strategy with cultural precision" percent="0" >
-				These are Weapons of Mass Production, and it's within every country's right to preserve their identity and sovereignty through the self assembling collective of resposible citizens.
+				Adapt the project to cultures around the world. Everything from user experience and app design to language and customs.
 			</pyramid-brick>
 
 

@@ -1,119 +1,150 @@
 <template>
     <div class="page-container">
         <nav-bar/>
-        <div id="contracts-nav">
-            <button class="selected mirror" flux="mirror">Low Flux</button> <button class="shadow" flux="shadow">High Flux<!-- 0xBabylon --></button>
-        </div>
+        <input id="masternode-clipboard" type="text" style="width:0px;visibility:hidden;height:0px;"/>
         <div id="MIRROR-token" class="exchange mirror ">
-            <div id="buy-MIRROR-cta-box" class="top left action-pair">
-                <div id="MIRROR-token-buy" class="centerage">
-                    
-                    <div class="buy-price">
-                        <h3>Buy Price</h3>
-                        <h6><b>0.00</b> ETH</h6><br>
+            <div class="top outer-left global-stats">
+                <div class="slate">
+                    <h3>Global</h3>
+                    <div class="top outer-left centerage mobile-head body">
+                        <div class="global-bond-stake-info centerage">
+                            <labeled-number class="global-contractbalance" label="ETH in Contract" number="0000"><img src="../assets/eth.png"></labeled-number>
+                            <labeled-number class="global-totalbonds" label="Circulating BONDs" number="0000"><img src="../assets/bonds-scroll.png"></labeled-number>
+                            <labeled-number class="global-fluxfee" label="Flux Fee" number="0000"><img class="shadowfy" src="../assets/butterfly.png"></labeled-number>
+                        </div>
+                        <div class="contracts-nav">
+                             <button class="shadow" flux="shadow">Goto Old Contract</button>
+                        </div>
                     </div>
-                    <div class="doing-numbers">
-                        <input type="number" id="purchase-MIRROR-amount" class="form-control" placeholder="ETH to convert (e.g. 0.12)">
-                    </div>
-                    <div class="buy-action">
-                        <md-button id="buy-MIRROR-tokens" class="cta buy-MIRROR">Buy <i>BONDs</i></md-button><button class="giftable" forwhat="buyfor-mirror"></button>
-                        <div class="return-predictor rp-getTokensForEther">Est. Tokens for ETH:<br><i>0</i></div>
-                    </div>
-               </div>
-            </div>
-            <div id="lone-buy-box" class="top center centerage mobile-head">
-                <div class="bond-stake-info centerage">
-                    <h1>Low Flux</h1>
-                    <h3 id="bond-count">BONDs<br><i>00.00</i><br>ETH: <b></b></h3>
                 </div>
             </div>
-            <div id="sell-MIRROR-cta-box" class="top right action-pair">
-                <div id="MIRROR-token-sell" class="centerage">
-                    <div class="sell-price">
-                        <h3>Sell Price</h3>
-                        <h6><b>0.00</b> ETH</h6><br>
+            <div id="buy-MIRROR-cta-box" class="top inner-left action-pair buy-bonds">
+                <div class="slate">
+                    <h3>Buy</h3>
+                    <div id="MIRROR-token-buy" class="centerage body">
+                            <labeled-number class="buy-price no-icon" label="Buy Price" number="0.0003"></labeled-number>
+                            <labeled-number class="buy amount-input no-icon" label="ETH to spend" number="eg 0.12" isInput="true"></labeled-number>
+                            <div class="buy-action">
+                                <md-button id="buy-MIRROR-tokens" class="cta buy-MIRROR">Buy <i>BONDs</i></md-button><button class="giftable" forwhat="buyfor-mirror"></button>
+                                <!--<div class="return-predictor rp-getTokensForEther">Est. Tokens for ETH:<br><i>0</i></div>-->
+                                <labeled-number class="buy estimated-amount no-icon mini-label" label="BONDs for ETH" number="Type Something in"></labeled-number>
+                            </div>
                     </div>
-                    <div class="doing-numbers">
-                        <input type="number" id="sell-MIRROR-amount" class="form-control" placeholder="Tokens to sell (e.g. 12)">
-                    </div>
-                    <div class="buy-action">
-                        <md-button id="sell-MIRROR-tokens" class="cta sell-MIRROR">Sell <i>BONDs</i></md-button> 
-                        <div class="return-predictor rp-getEtherForTokens">Est. ETH for Token:<br><i>0</i></div>
-                    </div>
-               </div>
-            </div>
-            <div id="MIRROR-butterfly" class="butterfly lone">
-                <md-button id="MIRROR-reinvest" class="cta MIRROR-reinvest reinvest-btn wing">Reinvest</md-button>
-                <div class="actions">
-                    <h4>Dividends: <b class="divcash">0000</b> ETH </h4>
                 </div>
-                <md-button id="withdraw-btn" class="cta MIRROR-withdraw wing" style="color:white;">Withdraw</md-button>
             </div>
-            <div class="fluxfee-box bottom center centerage">
-                <div class="butterflux"><img src="../assets/butterfly.png"></div>
-                <h3>Flux Fee</h3>
-                <h6><b class="flux-fee">0.00</b></h6>
+            <div id="lone-buy-box" class="top inner-right mobile-head">
+                <div class="slate">
+                    <h3>(You)</h3>
+                    <div class="bond-stake-info body">
+                        <labeled-number class="your-bonds" label="BONDs" number="00.00"><img src="../assets/bonds-scroll.png"></labeled-number>
+                        <labeled-number class="your-bonds-eth" label="ETH Value" number="00.00"><img src="../assets/eth.png"></labeled-number>
+                        <labeled-number class="your-resolves" label="Resolve Tokens" number="00.00"><img src="../assets/resolve.png"></labeled-number>
+                        <div class="centerage"><md-button class="masternode-link thin-btn">Masternode</md-button></div>
+                    </div>
+                </div>
             </div>
-            <div class="masternode bottom center centerage">
-                <h6><span>Masternode = 1000 BONDs</span><br><span class="reffo"></span></h6>
-                <!--<h6 class="soulecule-count">Resolve Ratio <i>0</i>%<br><b></b></h6>-->
+            <div id="sell-MIRROR-cta-box" class="top outer-right action-pair">
+                <div class="slate">
+                    <h3>Sell</h3>
+                    <div id="MIRROR-token-sell" class="centerage">
+                        <div class="body">
+                            <labeled-number class="sell-price no-icon" label="Sell Price" number="0.0003"></labeled-number>
+                            <labeled-number class="sell amount-input no-icon" label="Tokens to Sell" number="eg 120" isInput="true"></labeled-number>
+                            <div class="buy-action">
+                                <md-button id="sell-MIRROR-tokens" class="cta sell-MIRROR">Sell <i>BONDs</i></md-button>
+                                <labeled-number class="sell estimated-amount no-icon mini-label" label="ETH for BONDs" number="Type Something in"></labeled-number>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="MIRROR-butterfly" class="bottom inner-left butterfly earnings-wallet lone">
+                <div class="slate">
+                    <h3>Earnings</h3>
+                    <div class="body">
+                        <labeled-number class="earnings-total" label="Total Earnings" number="0.00"><img id="lugo" src="../assets/eth.png"></labeled-number>
+                        <labeled-number class="no-icon mini-label earnings-socialism" label="Community Earnings" number="0.00"></labeled-number>
+                        <labeled-number class="no-icon mini-label earnings-masternode" label="Masternode Earnings" number="0.00"></labeled-number>
+                        <div class="centerage">
+                            <md-button id="MIRROR-reinvest" class="cta MIRROR-reinvest reinvest-btn wing">Reinvest</md-button><br>
+                            <md-button id="withdraw-btn" class="cta MIRROR-withdraw wing" style="color:white;">Withdraw</md-button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="SHADOW-token" class="exchange shadow ghost">
-            <div id="buy-SHADOW-cta-box" class="top left action-pair">
-                <div id="SHADOW-token-buy" class="centerage">
-                    <div class="buy-price">
-                        <h3>Buy Price</h3>
-                        <h6><b>0.00</b> ETH</h6><br>
+            <div class="top outer-left global-stats">
+                <div class="slate">
+                    <h3>Global</h3>
+                    <div class="top outer-left centerage mobile-head body">
+                        <div class="global-bond-stake-info centerage">
+                            <labeled-number class="global-contractbalance" label="ETH in Contract" number="0000"><img src="../assets/eth.png"></labeled-number>
+                            <labeled-number class="global-totalbonds" label="Circulating BONDs" number="0000"><img src="../assets/bonds-scroll.png"></labeled-number>
+                            <labeled-number class="global-fluxfee" label="Flux Fee" number="0000"><img class="shadowfy" src="../assets/butterfly.png"></labeled-number>
+                        </div>
+                        <div class="contracts-nav">
+                            <button class="selected mirror" flux="mirror">Goto Babylon Contract</button>
+                            <br><a style="position:relative;top:20px;color:orange;" href="https://etherscan.io/address/0x67f41953b90966257c71f6f271572399dfbfe16d" target="_blank">Smart Contract Source</a>
+                        </div>
                     </div>
-                    <div class="doing-numbers">
-                        <input type="number" id="purchase-SHADOW-amount" class="form-control" placeholder="ETH to convert (e.g. 0.12)">
-                    </div>
-                    <div class="buy-action">
-                        <md-button id="buy-SHADOW-tokens" class="cta buy-SHADOW">Buy <i>BONDs</i></md-button>
-                        <button class="giftable" forwhat="buyfor-mirror"></button>
-                        <div class="return-predictor rp-getTokensForEther">Est. Tokens for ETH:<br><i>0</i></div>
-                    </div>
-               </div>
-            </div>
-            <div id="lone-buy-box" class="top center centerage mobile-head">
-                <div class="bond-stake-info centerage">
-                    <h1>High Flux</h1>
-                    <h3 id="bond-count">BONDs<br><i>00.00</i><br>ETH: <b></b></h3>
                 </div>
             </div>
-            <div id="sell-SHADOW-cta-box" class="top right action-pair">
-                <div id="SHADOW-token-sell" class="centerage">
-                    <div class="sell-price">
-                        <h3>Sell Price</h3>
-                        <h6><b>0.00</b> ETH</h6><br>
+            <div class="top inner-left action-pair buy-bonds">
+                <div class="slate">
+                    <h3>Buy</h3>
+                    <div class="centerage body">
+                        <labeled-number class="buy-price no-icon" label="Buy Price" number="0.0003"></labeled-number>
+                        <labeled-number class="buy amount-input no-icon" label="ETH to spend" number="eg 0.12" isInput="true"></labeled-number>
+                        <div class="buy-action">
+                            <md-button class="cta buy-SHADOW">Buy <i>BONDs</i></md-button><button class="giftable" forwhat="buyfor-mirror"></button>
+                            <labeled-number class="buy estimated-amount no-icon mini-label" label="BONDs for ETH" number="Type Something in"></labeled-number>
+                        </div>
                     </div>
-                    <div class="doing-numbers">
-                        <input type="number" id="sell-SHADOW-amount" class="form-control" placeholder="Tokens to sell (e.g. 12)">
-                    </div>
-                    <div class="buy-action">
-                        <md-button id="sell-SHADOW-tokens" class="cta sell-SHADOW">Sell <i>BONDs</i></md-button> 
-                        <div class="return-predictor rp-getEtherForTokens">Est. ETH for Token:<br><i>0</i></div>
-                    </div>
-               </div>
-            </div>
-            <div id="SHADOW-butterfly" class="butterfly lone">
-                <md-button id="SHADOW-reinvest" class="cta SHADOW-reinvest reinvest-btn wing">Reinvest</md-button>
-                <div class="actions">
-                    <h4>Dividends: <b class="divcash">0000</b> ETH </h4>
                 </div>
-                <md-button id="withdraw-btn" class="cta SHADOW-withdraw wing" style="color:white;">Withdraw</md-button>
             </div>
-            <div class="fluxfee-box bottom center centerage">
-                <div class="butterflux"><img src="../assets/butterfly.png"></div>
-                <h3>Flux Fee</h3>
-                <h6><b class="flux-fee">0.00</b></h6>
+            <div class="top inner-right mobile-head">
+                <div class="slate">
+                    <h3>(You)</h3>
+                    <div class="bond-stake-info body">
+                        <labeled-number class="your-bonds" label="BONDs" number="00.00"><img src="../assets/bonds-scroll.png"></labeled-number>
+                        <labeled-number class="your-bonds-eth" label="ETH Value" number="00.00"><img src="../assets/eth.png"></labeled-number>
+                        <labeled-number class="your-resolves" label="Resolve Tokens" number="00.00"><img src="../assets/resolve.png"></labeled-number>
+                        <div class="centerage"><md-button class="masternode-link thin-btn">Masternode</md-button></div>
+                    </div>
+                </div>
             </div>
-            <div class="masternode bottom center centerage">
-                <h6><span>Masternode = 1000 BONDs</span><br><span class="reffo"></span></h6>
-                <!--<h6 class="soulecule-count">Resolve Ratio <i>0</i>%<br><b></b></h6>-->
+            <div class="top outer-right action-pair sell-bonds">
+                <div class="slate">
+                    <h3>Sell</h3>
+                    <div  class="centerage">
+                        <div class="body">
+                            <labeled-number class="sell-price no-icon" label="Sell Price" number="0.0003"></labeled-number>
+                            <labeled-number class="sell amount-input no-icon" label="Tokens to Sell" number="eg 120" isInput="true"></labeled-number>
+                            <div class="buy-action">
+                                <md-button class="cta sell-SHADOW">Sell <i>BONDs</i></md-button>
+                                <labeled-number class="sell estimated-amount no-icon mini-label" label="ETH for BONDs" number="Type Something in"></labeled-number>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom inner-left butterfly earnings-wallet lone">
+                <div class="slate">
+                    <h3>Earnings</h3>
+                    <div class="body">
+                        <labeled-number class="earnings-total" label="Total Earnings" number="0.00"><img id="lugo" src="../assets/eth.png"></labeled-number>
+                        <labeled-number class="no-icon mini-label earnings-socialism" label="Community Earnings" number="0.00"></labeled-number>
+                        <labeled-number class="no-icon mini-label earnings-masternode" label="Masternode Earnings" number="0.00"></labeled-number>
+                        <div class="centerage">
+                            <md-button class="cta SHADOW-reinvest reinvest-btn wing">Reinvest</md-button><br>
+                            <md-button class="cta SHADOW-withdraw wing" style="color:white;">Withdraw</md-button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <how-it-works/>
         <footer-section/>
         <md-dialog id="more-questions-modal" :md-active.sync="warning">
             <md-dialog-title>Warning</md-dialog-title>
@@ -126,6 +157,185 @@
 </template>
 
 <style lang="scss" scoped>
+    .page-container{
+        background-image:url('../assets/light-hole-planetary-entry.jpg');
+        color:white;
+        background-size:cover;
+    }
+    .exchange{
+        display:grid;
+        /*grid-template-columns: auto auto auto auto auto auto auto auto auto;
+        grid-template-rows: auto auto auto;*/
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: auto auto;
+        
+        max-width:1200px;
+        margin:0 auto;
+        padding-top:80px;
+        padding-bottom:80px;
+    }
+    .ghost{display:none;}
+    .shadowfy{
+        -webkit-filter:drop-shadow(1px 1px 1px rgba(0,0,0,1));
+        -filter:drop-shadow(1px 1px 1px rgba(0,0,0,1));
+    }
+    @media only screen and (min-width: 1101px) {
+        .exchange{
+            height:calc(100vh + 120px);
+            width:90%;
+            grid-row-gap:16px;
+        }
+        .exchange .top{grid-row:1;}
+        .exchange .bottom{grid-row:2;}
+        .exchange .inner-left{grid-column:2;}
+        .exchange .outer-left{grid-column:1;}
+        .exchange .center{grid-column:4;}
+        .exchange .inner-right{grid-column:3;}
+        .exchange .outer-right{grid-column:4;}
+        .exchange .butterfly{grid-row:2;grid-column:3;}
+        .exchange .slate{
+            width:calc(100% - 20px);
+        }
+    }
+
+/*for tablet mobile*/
+@media only screen and (max-width: 1101px) {
+    .exchange{
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto auto;
+        width:calc(100% - 10px);
+        grid-row-gap:5px;
+    }
+    .exchange .slate{
+        width:calc(100% - 15px);
+    }
+    .mobile-head{
+        grid-column: 1;
+        grid-row:1;
+    }
+    .earnings-wallet{
+        grid-column: 2;
+        grid-row:1;
+    }
+    
+    .action-pair.left{
+        grid-column: 1;
+        grid-row:2;
+    }
+
+    .action-pair.right{
+        grid-column: 2;
+        grid-row:2;
+    }
+    .global-stats{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row:3;
+    }
+}
+
+/*for thin mobile*/
+@media only screen and (max-width: 500px) {
+    .exchange{
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto auto;
+        width:calc(100% - 10px);
+        grid-row-gap:5px;
+    }
+    .exchange .slate{
+        width:calc(100% - 2px);
+    }
+    .mobile-head{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row:1;
+    }
+    
+    .action-pair.left{
+        grid-column: 1;
+        grid-row:2;
+    }
+
+    .action-pair.right{
+        grid-column: 2;
+        grid-row:2;
+    }
+    .global-stats{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row:4;
+    }
+    .earnings-wallet{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row:3;
+        /*height:150px;*/
+    }
+}
+
+    .exchange .slate{
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        overflow:hidden;
+        margin:0 auto;
+        
+        height:300px;
+        background-image:url('../assets/inverted-deep-firey-space.png');
+        color:black;
+        border-style:solid;
+        border-width:1px;
+        border-color:#223980;
+        -webkit-box-shadow:inset 5px 0 10px 0px #838Bc5;
+        box-shadow:inset 5px 0 10px 0px #838Bc5;
+    }
+    .exchange h3, .contracts-nav > button{
+        color:white;
+        background-image:url('../assets/jagged-deep-warp-space.jpg');
+    }
+    .exchange h3{
+        height:42px;
+        line-height:42px;
+        font-size:20px;
+        text-align:center;
+        -webkit-box-shadow: 0 2px 10px 2px #434B75;
+        box-shadow: 0 2px 10px 2px #434B75;
+    }
+    .slate .md-button{
+        background-image:url('../assets/jagged-deep-warp-space.jpg');
+    }
+
+    #SHADOW-token h3, #SHADOW-token .md-button, .contracts-nav .shadow{
+        filter: hue-rotate(135deg) brightness(130%);
+    }
+    #SHADOW-token .slate{
+        -webkit-box-shadow:inset 5px 0 10px 0px #c58B83;
+        box-shadow:inset 5px 0 10px 0px #c58B83;
+        background-color: #754B43;
+        background-blend-mode: screen;
+        border-color:#553B33;
+    }
+
+    .inner-left .slate,.inner-left h3,.inner-left .md-button{background-position:-400px -660px;}
+    .outer-left .slate,.outer-left h3,.outer-left .md-button{background-position:-400px -550px;}
+    .inner-right .slate,.inner-right h3,.inner-right .md-button{background-position:-500px -700px;}
+    .outer-right .slate,.outer-right h3,.outer-right .md-button{background-position:-400px -720px;}
+    .butterfly .slate,.butterfly h3,.butterfly .md-button{background-position:-400px -600px;}
+    .slate .body{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .masternode.centerage{ position: relative;}
+    .masternode h6{width:100%;position:absolute;bottom:0;left:0;}
+    .butterfly .actions,.butterfly .cta,.md-button.thin-btn{
+        font-size:10px;
+        height:28px;
+    }/**/
+    #twin-butterfly .reinvest-btn,#lone-butterfly .wing{
+        margin-top:30px;
+    }
+    .soulecule-count{font-size:12px;}
+
 /*
                                                     TWIN TOKEN STYLING
 */
@@ -139,25 +349,22 @@ background-size:cover;
     filter: invert(100%);
 
 }
-    #contracts-nav{
+    .contracts-nav{
         text-align:center;
-                padding-top:70px;
-                padding-bottom:20px;
+        margin-top:16px;
     }
-    #contracts-nav button{
-        background:none;
+    .contracts-nav button{
         border-style:solid;
         color:white;
-        font-size:8px;
-        font-weight:700;
+        font-size:12px;
         height:20px;
-        padding-left:35px;
+        /*padding-left:35px;
         padding-right:35px;
         margin-left:10px;
-        margin-right:10px;
+        margin-right:10px;*/
     }
-    #contracts-nav button.mirror{border-color:#344664;}
-    #contracts-nav button.shadow{border-color:#644634;}
+    .contracts-nav button.mirror{border-color:#344664;}
+    .contracts-nav button.shadow{border-color:#644634;}
     button{cursor:pointer;}
             
                 
@@ -176,100 +383,13 @@ background-size:cover;
                 color:white;
             }
 
-/* New Less Hacky*/
-    #bulltoken-bearmarket.exchange{
-        padding-top:64px;
-    }
 
-    #beartoken-bullmarket .md-button.md-theme-default,
-    #beartoken-bullmarket .md-button,
     .exchange .md-button{
         color: white !important;
     }
-    .exchange{
-        display:grid;
-        height:calc(100vh );
-        grid-template-columns: auto auto auto auto auto auto auto auto auto;
-        grid-template-rows: auto auto auto;
-        width:100%;
-    }
-    .ghost{display:none;}
-    .exchange .top{grid-row:1;}
-    .exchange .middle{grid-row:2;}
-    .exchange .bottom{grid-row:3;}
-    .exchange .left{grid-column-start:1; grid-column-end:4;}
-        .exchange .middle.left{grid-column-start:1; grid-column-end:3;}
-    .exchange .center{grid-column-start:4 ;grid-column-end:7;}
-    .exchange .right{grid-column-start:7 ;grid-column-end:10;}
-        .exchange .middle.right{grid-column-start:8 ;grid-column-end:10;}
-    .exchange .butterfly{grid-row:2;grid-column-start:3 ;grid-column-end:8;}
-    .masternode.centerage{ position: relative;}
-    .masternode h6{width:100%;position:absolute;bottom:0;left:0;}
-    .butterfly{
-        text-align:center;
-    }
-    .butterfly .actions,.butterfly .cta{
-        display:inline-block;
-        font-size:10px;
-        height:28px;
-    }/**/
-    #twin-butterfly .reinvest-btn,#lone-butterfly .wing{
-        margin-top:30px;
-    }
-    .soulecule-count{font-size:12px;}
-
-    #bulltoken-bearmarket > div{padding-top:42px;}
-
+    
 /* Old Hacky */
             .centerage{text-align:center;}
-            #consoul{
-                display:grid;
-                height:100vh;
-                grid-template-columns: auto auto auto;
-                grid-template-rows: auto auto auto;
-                padding-top:134px;  
-            }
-            #staking-stuff{
-                width:100%;
-                position:relative;
-            }
-            #FNX-token-sell .token-sell header > div{float:left;}
-            #SNK-token-sell .token-sell header > div{float:right;}
-
-            #SOUL-butterfly{
-                grid-row:2;
-                grid-column:1/4;
-                text-align:center;
-            }
-            #SOUL-butterfly button.md-button{
-                width:120px;
-                height:30px;
-                font-size:80%;
-                position:relative;
-                top:50px;
-            }
-            #withdraw-btn,#reinvest-btn,#SOUL-butterfly .actions{
-                display:inline-block;
-            }
-            #SOUL-butterfly .actions{
-            }
-
-            #SNK-token-sell{
-                grid-row:3;
-                grid-column:3;
-            }
-            #FNX-token-sell{
-                grid-row:3;
-                grid-column:1;
-            }
-            #SNK-token-buy{
-                grid-row:1;
-                grid-column:3;
-            }
-            #FNX-token-buy{
-                grid-row:1;
-                grid-column:1;
-            }
             h3,h6{
                 margin:0;
             }
@@ -277,119 +397,14 @@ background-size:cover;
                 size:15px;
             }
             h6,span{display:inline-block;}
-            .nifty-coin{
-                width:50px;
-                filter:invert(1) sepia(1000000) saturate(15) hue-rotate(70deg);
-            }
-            #butterfly{
-            }
+            
 
             #disclaimer{padding:30px;padding-top:0;}
-            .page-container{background:black;color:white;}
-            #pyrtoken-balance{top:-30px;left:10px;position:relative;text-align:left;}
-            #buy-eos-tokens{display:block;}
+            
             .dashboard-glass{
             }
             #warning-closer .md-button{border:none;color:black;}
-            /* gateway */
-            #dashboard{padding-top:64px;}
             .dashboard-glass .md-button-content{color:white;}
-            #gateway{padding-top:15px;}
-            #pyr-market,#global-stats{
-            width:100%;
-            margin: 0 auto;
-            }
-            #global-stats{
-            text-align:right;
-            }
-            #purchase-amount {
-                background: none;
-                border: 0;
-                border-bottom: 1px solid #ffffff;
-                height: 30px;
-                width: 100%;
-                color: white;
-                outline: none;
-                font-size: 14px;
-                text-align: center;
-            }
-            #pyr-market{
-            display: grid;
-            grid-row-gap: 10px;
-            grid-column-gap: 10px;
-            grid-template-columns: 30% 20% 30% 20%;
-            grid-template-rows: 100px auto 150px;
-            height:calc(100vh - 100px);
-            }
-            #splash-buy-box{
-            grid-column: 1;
-            }
-            #action-buy-box{
-            grid-column: 1;
-            grid-row:3/4;
-            }
-            #divvies-box{
-            grid-column: 2 / 4;
-            grid-row:3;
-            }
-            #divvies-box .poh-div{
-            text-align: center;
-            }
-            #staking-value-box{
-            grid-column: 4;
-            grid-row:3;
-            }
-            #pricechart-box{
-            grid-column: 2/5;
-            grid-row:1/3;
-            display: grid;
-            grid-template-rows: 25% 75%;
-            grid-template-columns: 50% 50%;
-            }
-            #buy-box{
-            grid-column: 1;
-            grid-row: 1;
-            }
-            #sell-box{
-            grid-column: 2;
-            grid-row: 1;
-            }
-            #chart-box{
-            grid-column: 1/3;
-            grid-row: 2;
-            }
-
-            #splash-pyramid{
-            height:230px;
-            }
-            #gem-count{
-            width:250px;
-            margin: 0 auto;
-            margin-top: 10px;
-            }
-
-            #ether-cash-value,#staking-value-box,#action-buy-box{
-            text-align: center;
-            }
-            #ether-cash-value .floor-anchor{
-            width:100%;
-            }
-            .floor-anchor{
-            display: block;
-            position: absolute;
-            bottom: 0;
-            }
-
-            #pyr-market > div{position: relative;}
-            #pyr-market .count{
-            font-size:20px;
-            margin-bottom: 10px;
-            }
-            #soultoken-count .poh-soul{
-            font-size:14px;
-            }
-            #soul-gem{margin-right: 10px;}
-
             .md-button{
                 width:175px;
                 height:45px;
@@ -397,62 +412,6 @@ background-size:cover;
 
 
 
-/*for mobile*/
-@media only screen and (max-width: 750px) {
-    .exchange{
-        grid-template-columns: auto auto;
-        grid-template-rows: auto auto auto auto auto;
-    }
-    .mobile-head.center{
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-    .exchange .action-pair{
-        border-width:1px;
-        border-style:solid;
-    }
-    #MIRROR-token .action-pair{
-        border-color:#344664;
-    }
-    #SHADOW-token .action-pair{
-        border-color:#644634;
-    }
-    .action-pair.left{
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row:2;
-    }
-
-    .action-pair.right{
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row:2;
-    }
-    .lone.butterfly{
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row:3;
-        /*height:150px;*/
-    }
-    .lone > .actions{
-        float: left;
-        width: 100%;
-    }
-    
-    .fluxfee-box.centerage{
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row:4 !important;              
-    }    
-    .masternode.bottom.centerage{
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row:5;       
-        position: relative;
-    }
-    .masternode.centerage h6{position:relative;}
-
-}
 </style>
 
 <script>
@@ -2764,10 +2723,26 @@ let OG_abi = [
         updateData(mirrorContract,shadowContract);
     }, 1000);
     
+    $('.masternode-link').click(function(){
+        //copied this straight from w3schools
+        var copyText = document.getElementById("masternode-clipboard");
+        /* Select the text field */
+        copyText.select();
+
+        /* Copy the text inside the text field */
+        setTimeout(function(){
+            document.execCommand("copy");
+        },100)
+        
+
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+    });
+
     //-------------------------------------------------------------- MIRROR TOKEN...
 
-        var $buyInput_MIRROR = $('#purchase-MIRROR-amount');
-        var $sellInput_MIRROR = $('#sell-MIRROR-amount');
+        var $buyInput_MIRROR = $('#MIRROR-token .buy.amount-input input');
+        var $sellInput_MIRROR = $('#MIRROR-token .sell.amount-input input');
 
                     $('.buy-MIRROR').click(function() {
                         let amount = $buyInput_MIRROR.val();
@@ -2786,7 +2761,7 @@ let OG_abi = [
                         });
                     });
 
-                            $buyInput_MIRROR.keydown(function(){
+                            $buyInput_MIRROR.keyup(function(){
                                 var x = parseFloat( $buyInput_MIRROR.val() );
                                 if(!MIRROR_FLUX)
                                     MIRROR_FLUX=0;
@@ -2794,7 +2769,7 @@ let OG_abi = [
                                     mirrorContract.getTokensForEther( convertEthToWei( x ) * (1-MIRROR_FLUX), function(e, r){
                                         var tokens = parseFloat(r)/1000000000000000;
                                         console.log("how many tokens?",tokens,"-----------")
-                                        $(".rp-getTokensForEther i").text( tokens.toFixed(4) );
+                                        $("#MIRROR-token .buy.estimated-amount i").text( tokens.toFixed(4) );
                                     });
                                 }
                             });
@@ -2806,7 +2781,7 @@ let OG_abi = [
                         })
                     });
 
-                            $sellInput_MIRROR.keydown(function(){
+                            $sellInput_MIRROR.keyup(function(){
                                 var x = parseFloat( $sellInput_MIRROR.val() );
                                 if(!MIRROR_FLUX)
                                     MIRROR_FLUX=0;
@@ -2816,7 +2791,7 @@ let OG_abi = [
                                     console.log("x: ",x* 1000000000000000);
                                     mirrorContract.getEtherForTokens(  Math.max(x* 1000000000000000, 0)  , function(e, r){
                                         var ethers = convertWeiToEth(r)*(1-MIRROR_FLUX);
-                                        $(".rp-getEtherForTokens i").text( ethers.toFixed(4) );
+                                        $("#MIRROR-token .sell.estimated-amount i").text( ethers.toFixed(4) );
                                     });
                                 }
                             });
@@ -2835,8 +2810,8 @@ let OG_abi = [
     
   //-------------------------------------------------------------- SHADOW TOKEN...
 
-        var $buyInput_SHADOW = $('#purchase-SHADOW-amount');
-        var $sellInput_SHADOW = $('#sell-SHADOW-amount');
+        var $buyInput_SHADOW = $('#SHADOW-token .buy.amount-input input');
+        var $sellInput_SHADOW = $('#SHADOW-token .sell.amount-input input');
 
                     $('.buy-SHADOW').click(function() {
                         let amount = $buyInput_SHADOW.val();
@@ -2846,16 +2821,16 @@ let OG_abi = [
                             console.log(e, r);
                         });
                     });//SHADOW-token-buy
-                    $('#SHADOW-token-buy .giftable').click(function() {
+                    $('#SHADOW-token .giftable').click(function() {
                         let amount = $buyInput_SHADOW.val();
-                        shadowContract.fund(localStorage.getItem("masternode"),prompt("Enter the Address you want to buy for",web3.eth.defaultAccount),{
+                        shadowContract.fund(localStorage.getItem("masternode"), prompt("Enter the Address you want to buy for",web3.eth.defaultAccount),{
                             value: convertEthToWei(amount)
                         }, function(e, r){
                             console.log(e, r);
                         });
                     });
 
-                            $buyInput_SHADOW.keydown(function(){
+                            $buyInput_SHADOW.keydown( function(){
                                 var x = parseFloat( $buyInput_SHADOW.val() );
                                 if(!SHADOW_FLUX)
                                     SHADOW_FLUX=0;
@@ -2863,7 +2838,7 @@ let OG_abi = [
                                     shadowContract.getTokensForEther( convertEthToWei( x ) * (1-SHADOW_FLUX), function(e, r){
                                         var tokens = parseFloat(r)/1000000000000000;
                                         console.log("how many tokens?",tokens,"-----------")
-                                        $(".rp-getTokensForEther i").text( tokens.toFixed(4) );
+                                        $("#SHADOW-token .buy.estimated-amount i").text( tokens.toFixed(4) );
                                     });
                                 }
                             });
@@ -2885,7 +2860,7 @@ let OG_abi = [
                                     console.log("x: ",x* 1000000000000000);
                                     shadowContract.getEtherForTokens(  Math.max(x* 1000000000000000, 0)  , function(e, r){
                                         var ethers = convertWeiToEth(r)*(1-SHADOW_FLUX);
-                                        $(".rp-getEtherForTokens i").text( ethers.toFixed(4) );
+                                        $("#SHADOW-token .sell.estimated-amount i").text( ethers.toFixed(4) );
                                     });
                                 }
                             });
@@ -2925,12 +2900,12 @@ function updateData(mirrorContract,shadowContract) {
 
     if(!window.setmn){
         window.setmn = true;
-        $(".reffo").text("https://PyrConnect.com/#/Exchange?masternode="+web3.eth.defaultAccount);
+        $("#masternode-clipboard").val("https://0xBabylon.com/#/Exchange?masternode="+web3.eth.defaultAccount);
     }
     
     //------------------------------------------------------------   MIRROR FLUX      
                     mirrorContract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
-                        $('#MIRROR-token .bond-stake-info i').text((r / 1e18*1000).toFixed(4));
+                        $('#MIRROR-token .your-bonds i').text( (r / 1e18*1000).toFixed(4) );
                         MIRROR_BONDS = parseFloat(r / 1e18*1000);
                         mirrorContract.totalBondSupply.call(function(e, tbs){
                             if( parseFloat(r) == parseFloat(tbs) )
@@ -2941,9 +2916,9 @@ function updateData(mirrorContract,shadowContract) {
 
                         mirrorContract.getEtherForTokens(r, function(e, x){
                             if(r>0){
-                                $("#MIRROR-token .bond-stake-info b").text(convertWeiToEth(x * ( 1-MIRROR_FLUX ) ).toFixed(4) );
+                                $("#MIRROR-token .your-bonds-eth i").text(convertWeiToEth(x * ( 1-MIRROR_FLUX ) ).toFixed(4) );
                             }else{
-                                $("#MIRROR-token .bond-stake-info b").text("00000");
+                                $("#MIRROR-token .your-bonds-eth i").text("00000");
                             }
                         })
                     });
@@ -2951,32 +2926,37 @@ function updateData(mirrorContract,shadowContract) {
                     mirrorContract.balanceOf(web3.eth.defaultAccount, function(e, r) {
                         mirrorContract.resolveSupply( function(e, x) {
                             if(x == 0){
-                                $('#MIRROR-token .soulecule-count i').text( (0).toFixed(2));
-                                $('#MIRROR-token .soulecule-count b').text( (0).toFixed(2));}
+                                //$('#MIRROR-token .your-resolves i.p').text( (0).toFixed(2));
+                                $('#MIRROR-token .your-resolves i').text( (0).toFixed(2));}
                             else{
-                                $('#MIRROR-token .soulecule-count i').text( (r/x*100).toFixed(2));
-                                $('#MIRROR-token .soulecule-count b').text( (r / 1e18*1000).toFixed(4));
+                                //$('#MIRROR-token .your-resolves i.p').text( (r/x*100).toFixed(2));
+                                $('#MIRROR-token .your-resolves i').text( (r / 1e18*1000).toFixed(4));
                             }
                         });
                     });
 
                     mirrorContract.price(true,function(e, r){
                         let buyPrice = (1/convertWeiToEth(r)/1000000).toFixed(6);    
-                        $('#MIRROR-token .buy-price b').text(buyPrice);
+                        $('#MIRROR-token .buy-price i').text(buyPrice);
                     });
 
                     mirrorContract.price(false,function(e, r){
                         
                         let sellPrice = convertWeiToEth(r).toFixed(6);
-                        $('#MIRROR-token .sell-price b').text(sellPrice);
+                        $('#MIRROR-token .sell-price i').text(sellPrice);
                     });
 
                     mirrorContract.dividends(web3.eth.defaultAccount, function(e, r) {
                         mirrorContract.pocket.call(web3.eth.defaultAccount,function(e, x){
-                            $('#MIRROR-token .divcash').text(convertWeiToEth(parseInt(r)+parseInt(x)).toFixed(4));
+                            $('#MIRROR-token .earnings-total i').text(convertWeiToEth(parseInt(r)+parseInt(x)).toFixed(4));
+                            $('#MIRROR-token .earnings-masternode i').text(convertWeiToEth(parseInt(x)).toFixed(4));
+                            $('#MIRROR-token .earnings-socialism i').text(convertWeiToEth(parseInt(r)).toFixed(4));
                         });
                     });
-
+                    mirrorContract.totalBondSupply.call(function (e, r){
+                        var rr = (r / 1e18*1000).toFixed(4)
+                        $('#MIRROR-token .global-totalbonds i').text( rr );
+                    });
                     mirrorContract.investSum.call(function (e, r){
                             if(r!=0)
                                 var iSum = r;
@@ -2990,17 +2970,18 @@ function updateData(mirrorContract,shadowContract) {
                             
                             if(iSum == 0 || highlander ){
                                 MIRROR_FLUX = 0;
-                                $('#MIRROR-token .flux-fee').text( "0%"  )
+                                $('#MIRROR-token .global-fluxfee i').text( "0%"  )
                             }else{
                                 MIRROR_FLUX = (iSum-wSum)/iSum;
-                                $('#MIRROR-token .flux-fee').text( (MIRROR_FLUX*100).toFixed(2) +"%"  )
+                                $('#MIRROR-token .global-fluxfee i').text( (MIRROR_FLUX*100).toFixed(2) +"%"  )
                             }
+                            $('#MIRROR-token .global-contractbalance i').text( convertWeiToEth(iSum-wSum ).toFixed(4)  );
                         });
                     });
     
     //------------------------------------------------------------   SHADOW FLUX      
                     shadowContract.holdingsOf(web3.eth.defaultAccount, function(e, r) {
-                        $('#SHADOW-token .bond-stake-info i').text((r / 1e18*1000).toFixed(4));
+                        $('#SHADOW-token .your-bonds i').text((r / 1e18*1000).toFixed(4));
                         SHADOW_BONDS = parseFloat(r / 1e18*1000);
                         shadowContract.totalBondSupply.call(function(e, tbs){
                             if( parseFloat(r) == parseFloat(tbs) )
@@ -3011,9 +2992,9 @@ function updateData(mirrorContract,shadowContract) {
 
                         shadowContract.getEtherForTokens(r, function(e, x){
                             if(r>0){
-                                $("#SHADOW-token .bond-stake-info b").text(convertWeiToEth(x * ( 1-SHADOW_FLUX ) ).toFixed(4) );
+                                $("#SHADOW-token .your-bonds-eth i").text(convertWeiToEth(x * ( 1-SHADOW_FLUX ) ).toFixed(4) );
                             }else{
-                                $("#SHADOW-token .bond-stake-info b").text("00000");
+                                $("#SHADOW-token .your-bonds-eth i").text("00000");
                             }
                         })
                     });
@@ -3021,29 +3002,43 @@ function updateData(mirrorContract,shadowContract) {
                     shadowContract.balanceOf(web3.eth.defaultAccount, function(e, r) {
                         shadowContract.resolveSupply( function(e, x) {
                             if(x == 0){
-                                $('#SHADOW-token .soulecule-count i').text( (0).toFixed(2));
-                                $('#SHADOW-token .soulecule-count b').text( (0).toFixed(2));}
+                                //$('#SHADOW-token .your-resolves i').text( (0).toFixed(2));
+                                $('#SHADOW-token .your-resolves i').text( (0).toFixed(2));}
                             else{
-                                $('#SHADOW-token .soulecule-count i').text( (r/x*100).toFixed(2));
-                                $('#SHADOW-token .soulecule-count b').text( (r / 1e18*1000).toFixed(4));
+                                //$('#SHADOW-token .your-resolves i').text( (r/x*100).toFixed(2));
+                                $('#SHADOW-token .your-resolves i').text( (r / 1e18*1000).toFixed(4));
                             }
                         });
                     });
 
                     shadowContract.price(true,function(e, r){
-                        let buyPrice = (1/convertWeiToEth(r)/1000000).toFixed(6);    
-                        $('#SHADOW-token .buy-price b').text(buyPrice);
+                        let buyPrice = (1/convertWeiToEth(r)/1000000).toFixed(8);    
+                        $('#SHADOW-token .buy-price i').text(buyPrice);
                     });
 
                     shadowContract.price(false,function(e, r){
-                        
-                        let sellPrice = convertWeiToEth(r).toFixed(6);
-                        $('#SHADOW-token .sell-price b').text(sellPrice);
+                        let sellPrice = convertWeiToEth(r).toFixed(8);
+                        $('#SHADOW-token .sell-price i').text(sellPrice);
+                    });
+
+                    shadowContract.totalBondSupply.call(function (e, r){
+                        var rr = (r / 1e18*1000).toFixed(4)
+                        $('#SHADOW-token .global-totalbonds i').text( rr );
                     });
 
                     shadowContract.cashWallet(web3.eth.defaultAccount, function(e, r) {
-                        $('#SHADOW-token .divcash').text(convertWeiToEth( parseInt(r) ).toFixed(4));
+                        //$('#SHADOW-token .earnings-total i').text(convertWeiToEth( parseInt(r) ).toFixed(4));
                         /*shadowContract.pocket.call(web3.eth.defaultAccount,function(e, x){});*/
+                    });
+
+                    shadowContract.dividends(web3.eth.defaultAccount, function(e, r) { 
+                        shadowContract.tricklingFlo.call(web3.eth.defaultAccount, function(e, x) {
+                            shadowContract.pocket.call(web3.eth.defaultAccount,function(e, z){
+                                $('#SHADOW-token .earnings-socialism i').text(convertWeiToEth( parseInt(r) ).toFixed(4));
+                                $('#SHADOW-token .earnings-masternode i').text(convertWeiToEth( parseInt(z)+parseInt(x) ).toFixed(4));
+                                $('#SHADOW-token .earnings-total i').text(convertWeiToEth( parseInt(r)+parseInt(z)+parseInt(x) ).toFixed(4));
+                            });
+                        });
                     });
 
                     shadowContract.investSum.call(function (e, r){
@@ -3059,11 +3054,12 @@ function updateData(mirrorContract,shadowContract) {
                             
                             if(iSum == 0 || highlander ){
                                 SHADOW_FLUX = 0;
-                                $('#SHADOW-token .flux-fee').text( "0%"  )
+                                $('#SHADOW-token .global-fluxfee i').text( "0%"  )
                             }else{
                                 SHADOW_FLUX = wSum/iSum;
-                                $('#SHADOW-token .flux-fee').text( (SHADOW_FLUX*100).toFixed(2) +"%"  )
+                                $('#SHADOW-token .global-fluxfee i').text( (SHADOW_FLUX*100).toFixed(2) +"%"  )
                             }
+                            $('#SHADOW-token .global-contractbalance i').text( convertWeiToEth(iSum-wSum ).toFixed(4)  );
                         });
                     });
 
@@ -3081,7 +3077,7 @@ function updateData(mirrorContract,shadowContract) {
         console.log(  fluxxr  );
     }
 
-    $("#contracts-nav button").click(function(){
+    $(".contracts-nav button").click(function(){
         fluxit( $(this).attr("flux") );
     });
 

@@ -25,6 +25,15 @@ Vue.component('demo-resolver',DemoResolver);
 import DemoFlux from './components/DemoFlux.vue'
 Vue.component('demo-flux',DemoFlux);
 
+import DemoReinvest from './components/DemoReinvest.vue'
+Vue.component('demo-reinvest',DemoReinvest);
+
+import LabeledNumber from './components/LabeledNumber.vue'
+Vue.component('labeled-number',LabeledNumber);
+
+import HowItWorks from './components/HowItWorks.vue'
+Vue.component('how-it-works',HowItWorks);
+
 //home
 	import SplashSection from './components/SplashSection.vue'
 	Vue.component('splash-section',SplashSection);

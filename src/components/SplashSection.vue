@@ -11,7 +11,7 @@
 
 		<div id="splash-grid">
 			<div id="splash-gem">
-				<img src="../assets/emerald-soul-shell.png"/>
+				 <img src="../assets/emerald-soul-shell.png"/> <!---->
 			
 				<video preload="preload" id="planet-atom" autoplay="" loop="">
 	              <source src="../assets/liminality.webm" type="video/webm">
@@ -146,7 +146,9 @@ export default {
 	name: "SPLASHACTION",
 	methods:{
 		jumpToExchange:function(){
-			var fff = window.location.href.toLowerCase().indexOf('pyrconnect');
+			window.location.assign("https://www.0xBabylon.com/#/Exchange");
+			/*var fff = window.location.href.toLowerCase().indexOf('pyrconnect');
+
 			if( fff>= 0 ){
 				window.location.assign("https://pyrlink.com/#/Exchange");
 				console.log('jump to pyrlink...')
@@ -157,7 +159,7 @@ export default {
 				console.log('jump to pyrconnect...')
 				console.log(fff);
 				console.log(window.location.href);
-			}
+			}*/
 		}
 	}
 }

@@ -117,7 +117,7 @@
 	
 <script>
 export default{
-	name: 'PathCard',
+	name: 'NavBar',
 	data:()=>({
 		navHomeOpened: false
 	}),
@@ -129,7 +129,10 @@ export default{
 			this.tab = to;
 		},
 		jumpToExchange:function(){
-			var fff = window.location.href.toLowerCase().indexOf('pyrconnect');
+
+			window.location.assign("https://www.0xBabylon.com/#/Exchange");
+			
+			/*var fff = window.location.href.toLowerCase().indexOf('pyrconnect');
 			if( fff>= 0 ){
 				window.location.assign("https://pyrlink.com/#/Exchange");
 				console.log('jump to pyrlink...')
@@ -140,7 +143,7 @@ export default{
 				console.log('jump to pyrconnect...')
 				console.log(fff);
 				console.log(window.location.href);
-			}
+			}*/
 		}
 	},
 	created:function(){
