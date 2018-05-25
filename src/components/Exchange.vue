@@ -1,7 +1,7 @@
 <template>
     <div class="page-container">
         <nav-bar/>
-        <input id="masternode-clipboard" type="text" style="width:0px;visibility:hidden;height:0px;"/>
+        <input id="masternode-clipboard" type="text" style="width:110px;height:310px;position:absolute;opacity:0;"/>
         <div id="MIRROR-token" class="exchange mirror ">
             <div class="top outer-left global-stats">
                 <div class="slate">
@@ -2724,19 +2724,16 @@ let OG_abi = [
     }, 1000);
     
     $('.masternode-link').click(function(){
-        //copied this straight from w3schools
         var copyText = document.getElementById("masternode-clipboard");
-        /* Select the text field */
+        
         copyText.select();
 
-        /* Copy the text inside the text field */
         setTimeout(function(){
             document.execCommand("copy");
-        },100)
+            alert("Copied to Clipboard: " + copyText.value);
+        },500)
         
 
-        /* Alert the copied text */
-        alert("Copied the text: " + copyText.value);
     });
 
     //-------------------------------------------------------------- MIRROR TOKEN...
