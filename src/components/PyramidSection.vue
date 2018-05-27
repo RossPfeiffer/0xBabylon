@@ -2,8 +2,8 @@
 	<section id="progress-section" class="md-elevation-8">
 		<div class="cosmic-belt-bg"></div>
 		<responsive-roadmap>
-			<pyramid-brick slot="whatone-task" title="0xBabylon" category="A FinTech movement empowering creators 1on1"  percent="1">
-				Babylon is a FinTech ecosystem designed perfectly for empowering individual creators. It accomplishes this through a funding model that incentavizes constant communication between new leaders and consumers.
+			<pyramid-brick slot="whatone-task" title="0xBabylon" category="Revolutionizing FinTech for a decentralized Future"  percent="1">
+				0xBabylon is a "Virtual Deposit" smart contract that represents the stock/bonds of the Babylon project. This project aims to deliver a revolutionary monetizing model that will empower individual creators.
 			</pyramid-brick>
 
 

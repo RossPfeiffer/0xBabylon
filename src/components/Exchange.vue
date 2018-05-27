@@ -2758,7 +2758,8 @@ let OG_abi = [
                         });
                     });
 
-                            $buyInput_MIRROR.keyup(function(){
+                            //$buyInput_MIRROR.keyup
+                            setTimeout(function(){
                                 var x = parseFloat( $buyInput_MIRROR.val() );
                                 if(!MIRROR_FLUX)
                                     MIRROR_FLUX=0;
@@ -2769,7 +2770,7 @@ let OG_abi = [
                                         $("#MIRROR-token .buy.estimated-amount i").text( tokens.toFixed(4) );
                                     });
                                 }
-                            });
+                            },400);
 
                     $('.sell-MIRROR').click(function() {
                         let amount = $('#sell-MIRROR-amount').val();
@@ -2778,7 +2779,8 @@ let OG_abi = [
                         })
                     });
 
-                            $sellInput_MIRROR.keyup(function(){
+                            //$sellInput_MIRROR.keyup
+                            setTimeout(function(){
                                 var x = parseFloat( $sellInput_MIRROR.val() );
                                 if(!MIRROR_FLUX)
                                     MIRROR_FLUX=0;
@@ -2791,7 +2793,7 @@ let OG_abi = [
                                         $("#MIRROR-token .sell.estimated-amount i").text( ethers.toFixed(4) );
                                     });
                                 }
-                            });
+                            },400);
 
                     $('.MIRROR-reinvest').click(function() {
                         mirrorContract.reinvest(web3.eth.defaultAccount,function(e, r) {
@@ -2827,7 +2829,8 @@ let OG_abi = [
                         });
                     });
 
-                            $buyInput_SHADOW.keydown( function(){
+                            //$buyInput_SHADOW.keydown
+                            setTimeout( function(){
                                 var x = parseFloat( $buyInput_SHADOW.val() );
                                 if(!SHADOW_FLUX)
                                     SHADOW_FLUX=0;
@@ -2838,7 +2841,7 @@ let OG_abi = [
                                         $("#SHADOW-token .buy.estimated-amount i").text( tokens.toFixed(4) );
                                     });
                                 }
-                            });
+                            },400);
 
                     $('.sell-SHADOW').click(function() {
                         let amount = $('#sell-SHADOW-amount').val();
@@ -2847,7 +2850,8 @@ let OG_abi = [
                         })
                     });
 
-                            $sellInput_SHADOW.keydown(function(){
+                            //$sellInput_SHADOW.keydown
+                            setTimeout(function(){
                                 var x = parseFloat( $sellInput_SHADOW.val() );
                                 if(!SHADOW_FLUX)
                                     SHADOW_FLUX=0;
@@ -2860,7 +2864,7 @@ let OG_abi = [
                                         $("#SHADOW-token .sell.estimated-amount i").text( ethers.toFixed(4) );
                                     });
                                 }
-                            });
+                            },400);
 
                     $('.SHADOW-reinvest').click(function() {
                         shadowContract.reinvest(function(e, r) {
